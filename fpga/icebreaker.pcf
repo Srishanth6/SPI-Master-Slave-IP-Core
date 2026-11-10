@@ -1,0 +1,13 @@
+# iCEBreaker pin constraints
+# Clock 12 MHz
+set_io clk 35
+# Button (active low reset)
+set_io rst_n 10
+# LEDs
+set_io led_g 37
+set_io led_r 11
+# PMOD 1A, so the SPI pins can also be watched with a logic analyser
+set_io sclk 4
+set_io mosi 2
+set_io miso 47
+set_io cs_n 45
