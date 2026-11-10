@@ -1,0 +1,12 @@
+build/
+waves/*.vcd
+waves/*.fst
+*.vvp
+obj_dir/
+__pycache__/
+*.pyc
+coverage.dat
+formal/*/
+!formal/*.sby
+!formal/*.v
+*.sby-*/
