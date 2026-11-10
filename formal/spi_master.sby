@@ -1,0 +1,15 @@
+[options]
+mode bmc
+depth 60
+
+[engines]
+smtbmc boolector
+
+[script]
+read -formal spi_master.v
+read -formal spi_master_formal.v
+prep -top spi_master_formal
+
+[files]
+rtl/spi_master.v
+formal/spi_master_formal.v
