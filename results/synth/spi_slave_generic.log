@@ -1,0 +1,1687 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.70+368 (git sha1 7cf88aca6, Release, Clang /usr/bin/clang++ 21.1.8)
+
+-- Running command `read_verilog rtl/spi_slave.v; synth -top spi_slave -flatten; abc -g cmos2; opt_clean; tee -o results/synth/spi_slave_generic.stat stat' --
+
+1. Executing Verilog-2005 frontend: rtl/spi_slave.v
+Parsing Verilog input from `rtl/spi_slave.v' to AST representation.
+Generating RTLIL representation for module `\spi_slave'.
+Successfully finished Verilog frontend.
+
+2. Executing SYNTH pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1.1. Analyzing design hierarchy..
+Top module:  \spi_slave
+
+2.1.2. Analyzing design hierarchy..
+Top module:  \spi_slave
+Removed 0 unused modules.
+
+2.2. Executing PROC pass (convert processes to netlists).
+
+2.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\spi_slave.$rtl/spi_slave.v:50$proc$11'.
+Cleaned up 1 empty switch.
+
+2.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 14 switch rules as full_case in process $rtl/spi_slave.v:141$proc$30 in module spi_slave.
+Marked 1 switch rules as full_case in process $rtl/spi_slave.v:50$proc$11 in module spi_slave.
+Removed a total of 0 dead cases.
+
+2.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 10 redundant assignments.
+Promoted 16 assignments to connections.
+
+2.2.4. Executing PROC_INIT pass (extract init attributes).
+
+2.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+Found async reset \rst_n in `\spi_slave.$rtl/spi_slave.v:50$proc$11'.
+
+2.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~20 debug messages>
+
+2.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+     1/99: $7\first_bit$func$rtl/spi_slave.v:137$6.$result[0:0]$162
+     2/99: $6\first_bit$func$rtl/spi_slave.v:137$6.$result[0:0]$158
+     3/99: $6\first_bit$func$rtl/spi_slave.v:137$6.lsb[0:0]$161
+     4/99: $6\first_bit$func$rtl/spi_slave.v:137$6.tot[5:0]$160
+     5/99: $6\first_bit$func$rtl/spi_slave.v:137$6.data[31:0]$159
+     6/99: $7\first_bit$func$rtl/spi_slave.v:218$4.$result[0:0]$151
+     7/99: $6\first_bit$func$rtl/spi_slave.v:218$4.$result[0:0]$147
+     8/99: $6\first_bit$func$rtl/spi_slave.v:218$4.lsb[0:0]$150
+     9/99: $6\first_bit$func$rtl/spi_slave.v:218$4.tot[5:0]$149
+    10/99: $6\first_bit$func$rtl/spi_slave.v:218$4.data[31:0]$148
+    11/99: $5\first_bit$func$rtl/spi_slave.v:218$4.lsb[0:0]$140
+    12/99: $5\first_bit$func$rtl/spi_slave.v:218$4.tot[5:0]$139
+    13/99: $5\first_bit$func$rtl/spi_slave.v:218$4.data[31:0]$138
+    14/99: $5\first_bit$func$rtl/spi_slave.v:218$4.$result[0:0]$137
+    15/99: $5\first_bit$func$rtl/spi_slave.v:137$6.lsb[0:0]$144
+    16/99: $5\first_bit$func$rtl/spi_slave.v:137$6.tot[5:0]$143
+    17/99: $5\first_bit$func$rtl/spi_slave.v:137$6.data[31:0]$142
+    18/99: $5\first_bit$func$rtl/spi_slave.v:137$6.$result[0:0]$141
+    19/99: $7\first_bit$func$rtl/spi_slave.v:178$3.$result[0:0]$122
+    20/99: $6\first_bit$func$rtl/spi_slave.v:178$3.$result[0:0]$118
+    21/99: $6\first_bit$func$rtl/spi_slave.v:178$3.lsb[0:0]$121
+    22/99: $6\first_bit$func$rtl/spi_slave.v:178$3.tot[5:0]$120
+    23/99: $6\first_bit$func$rtl/spi_slave.v:178$3.data[31:0]$119
+    24/99: $5\first_bit$func$rtl/spi_slave.v:178$3.lsb[0:0]$116
+    25/99: $5\first_bit$func$rtl/spi_slave.v:178$3.tot[5:0]$115
+    26/99: $5\first_bit$func$rtl/spi_slave.v:178$3.data[31:0]$114
+    27/99: $5\first_bit$func$rtl/spi_slave.v:178$3.$result[0:0]$113
+    28/99: $4\first_bit$func$rtl/spi_slave.v:178$3.lsb[0:0]$103
+    29/99: $4\first_bit$func$rtl/spi_slave.v:178$3.tot[5:0]$102
+    30/99: $4\first_bit$func$rtl/spi_slave.v:178$3.data[31:0]$101
+    31/99: $4\first_bit$func$rtl/spi_slave.v:178$3.$result[0:0]$100
+    32/99: $4\first_bit$func$rtl/spi_slave.v:137$6.lsb[0:0]$111
+    33/99: $4\first_bit$func$rtl/spi_slave.v:137$6.tot[5:0]$110
+    34/99: $4\first_bit$func$rtl/spi_slave.v:137$6.data[31:0]$109
+    35/99: $4\first_bit$func$rtl/spi_slave.v:137$6.$result[0:0]$108
+    36/99: $4\first_bit$func$rtl/spi_slave.v:218$4.lsb[0:0]$107
+    37/99: $4\first_bit$func$rtl/spi_slave.v:218$4.tot[5:0]$106
+    38/99: $4\first_bit$func$rtl/spi_slave.v:218$4.data[31:0]$105
+    39/99: $4\first_bit$func$rtl/spi_slave.v:218$4.$result[0:0]$104
+    40/99: $3\first_bit$func$rtl/spi_slave.v:137$6.lsb[0:0]$97
+    41/99: $3\first_bit$func$rtl/spi_slave.v:137$6.tot[5:0]$96
+    42/99: $3\first_bit$func$rtl/spi_slave.v:137$6.data[31:0]$95
+    43/99: $3\first_bit$func$rtl/spi_slave.v:137$6.$result[0:0]$94
+    44/99: $3\first_bit$func$rtl/spi_slave.v:218$4.lsb[0:0]$93
+    45/99: $3\first_bit$func$rtl/spi_slave.v:218$4.tot[5:0]$92
+    46/99: $3\first_bit$func$rtl/spi_slave.v:218$4.data[31:0]$91
+    47/99: $3\first_bit$func$rtl/spi_slave.v:218$4.$result[0:0]$90
+    48/99: $3\first_bit$func$rtl/spi_slave.v:178$3.lsb[0:0]$89
+    49/99: $3\first_bit$func$rtl/spi_slave.v:178$3.tot[5:0]$88
+    50/99: $3\first_bit$func$rtl/spi_slave.v:178$3.data[31:0]$87
+    51/99: $3\first_bit$func$rtl/spi_slave.v:178$3.$result[0:0]$86
+    52/99: $3\first_bit$func$rtl/spi_slave.v:137$2.$result[0:0]$80
+    53/99: $2\first_bit$func$rtl/spi_slave.v:137$2.$result[0:0]$64
+    54/99: $2\first_bit$func$rtl/spi_slave.v:137$2.lsb[0:0]$67
+    55/99: $2\first_bit$func$rtl/spi_slave.v:137$2.tot[5:0]$66
+    56/99: $2\first_bit$func$rtl/spi_slave.v:137$2.data[31:0]$65
+    57/99: $2\first_bit$func$rtl/spi_slave.v:137$6.lsb[0:0]$79
+    58/99: $2\first_bit$func$rtl/spi_slave.v:137$6.tot[5:0]$78
+    59/99: $2\first_bit$func$rtl/spi_slave.v:137$6.data[31:0]$77
+    60/99: $2\first_bit$func$rtl/spi_slave.v:137$6.$result[0:0]$76
+    61/99: $2\first_bit$func$rtl/spi_slave.v:218$4.lsb[0:0]$75
+    62/99: $2\first_bit$func$rtl/spi_slave.v:218$4.tot[5:0]$74
+    63/99: $2\first_bit$func$rtl/spi_slave.v:218$4.data[31:0]$73
+    64/99: $2\first_bit$func$rtl/spi_slave.v:218$4.$result[0:0]$72
+    65/99: $2\first_bit$func$rtl/spi_slave.v:178$3.lsb[0:0]$71
+    66/99: $2\first_bit$func$rtl/spi_slave.v:178$3.tot[5:0]$70
+    67/99: $2\first_bit$func$rtl/spi_slave.v:178$3.data[31:0]$69
+    68/99: $2\first_bit$func$rtl/spi_slave.v:178$3.$result[0:0]$68
+    69/99: $1\first_bit$func$rtl/spi_slave.v:137$6.lsb[0:0]$63
+    70/99: $1\first_bit$func$rtl/spi_slave.v:137$6.tot[5:0]$62
+    71/99: $1\first_bit$func$rtl/spi_slave.v:137$6.data[31:0]$61
+    72/99: $1\first_bit$func$rtl/spi_slave.v:137$6.$result[0:0]$60
+    73/99: $1\first_bit$func$rtl/spi_slave.v:218$4.lsb[0:0]$59
+    74/99: $1\first_bit$func$rtl/spi_slave.v:218$4.tot[5:0]$58
+    75/99: $1\first_bit$func$rtl/spi_slave.v:218$4.data[31:0]$57
+    76/99: $1\first_bit$func$rtl/spi_slave.v:218$4.$result[0:0]$56
+    77/99: $1\first_bit$func$rtl/spi_slave.v:178$3.lsb[0:0]$55
+    78/99: $1\first_bit$func$rtl/spi_slave.v:178$3.tot[5:0]$54
+    79/99: $1\first_bit$func$rtl/spi_slave.v:178$3.data[31:0]$53
+    80/99: $1\first_bit$func$rtl/spi_slave.v:178$3.$result[0:0]$52
+    81/99: $1\first_bit$func$rtl/spi_slave.v:137$2.lsb[0:0]$51
+    82/99: $1\first_bit$func$rtl/spi_slave.v:137$2.tot[5:0]$50
+    83/99: $1\first_bit$func$rtl/spi_slave.v:137$2.data[31:0]$49
+    84/99: $1\first_bit$func$rtl/spi_slave.v:137$2.$result[0:0]$48
+    85/99: $0\mid_cs_abort[0:0]
+    86/99: $0\rx_valid[0:0]
+    87/99: $0\rx_ready[0:0]
+    88/99: $0\clk_idle[0:0]
+    89/99: $0\word_gap[0:0]
+    90/99: $0\active[0:0]
+    91/99: $0\lsb_r[0:0]
+    92/99: $0\rx_sh[31:0]
+    93/99: $0\tx_sh[31:0]
+    94/99: $0\bits_tot[5:0]
+    95/99: $0\bit_cnt[5:0]
+    96/99: $0\miso[0:0]
+    97/99: $0\overrun[0:0]
+    98/99: $0\busy[0:0]
+    99/99: $0\rx_data[31:0]
+Creating decoders for process `\spi_slave.$rtl/spi_slave.v:50$proc$11'.
+     1/8: $0\cs_d[0:0]
+     2/8: $0\sclk_d[0:0]
+     3/8: $0\mosi_s1[0:0]
+     4/8: $0\mosi_s0[0:0]
+     5/8: $0\cs_s1[0:0]
+     6/8: $0\cs_s0[0:0]
+     7/8: $0\sclk_s1[0:0]
+     8/8: $0\sclk_s0[0:0]
+
+2.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\spi_slave.\rx_data' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1127' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\rx_valid' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1132' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\busy' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1137' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\overrun' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1142' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\mid_cs_abort' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1147' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\miso' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1152' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\bit_cnt' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1157' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\bits_tot' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1162' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\tx_sh' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1167' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\rx_sh' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1172' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\lsb_r' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1177' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\active' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1182' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\word_gap' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1187' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\clk_idle' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1192' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\rx_ready' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1197' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\first_bit$func$rtl/spi_slave.v:137$2.$result' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1202' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\first_bit$func$rtl/spi_slave.v:137$2.data' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1207' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\first_bit$func$rtl/spi_slave.v:137$2.tot' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1212' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\first_bit$func$rtl/spi_slave.v:137$2.lsb' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1217' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\first_bit$func$rtl/spi_slave.v:178$3.$result' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1222' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\first_bit$func$rtl/spi_slave.v:178$3.data' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1227' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\first_bit$func$rtl/spi_slave.v:178$3.tot' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1232' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\first_bit$func$rtl/spi_slave.v:178$3.lsb' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1237' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\first_bit$func$rtl/spi_slave.v:218$4.$result' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1242' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\first_bit$func$rtl/spi_slave.v:218$4.data' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1247' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\first_bit$func$rtl/spi_slave.v:218$4.tot' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1252' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\first_bit$func$rtl/spi_slave.v:218$4.lsb' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1257' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\first_bit$func$rtl/spi_slave.v:137$6.$result' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1262' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\first_bit$func$rtl/spi_slave.v:137$6.data' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1267' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\first_bit$func$rtl/spi_slave.v:137$6.tot' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1272' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\first_bit$func$rtl/spi_slave.v:137$6.lsb' using process `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+  created $adff cell `$procdff$1277' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\sclk_s0' using process `\spi_slave.$rtl/spi_slave.v:50$proc$11'.
+  created $adff cell `$procdff$1282' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\sclk_s1' using process `\spi_slave.$rtl/spi_slave.v:50$proc$11'.
+  created $adff cell `$procdff$1287' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\cs_s0' using process `\spi_slave.$rtl/spi_slave.v:50$proc$11'.
+  created $adff cell `$procdff$1292' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\cs_s1' using process `\spi_slave.$rtl/spi_slave.v:50$proc$11'.
+  created $adff cell `$procdff$1297' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\mosi_s0' using process `\spi_slave.$rtl/spi_slave.v:50$proc$11'.
+  created $adff cell `$procdff$1302' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\mosi_s1' using process `\spi_slave.$rtl/spi_slave.v:50$proc$11'.
+  created $adff cell `$procdff$1307' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\sclk_d' using process `\spi_slave.$rtl/spi_slave.v:50$proc$11'.
+  created $adff cell `$procdff$1312' with positive edge clock and positive level reset.
+Creating register for signal `\spi_slave.\cs_d' using process `\spi_slave.$rtl/spi_slave.v:50$proc$11'.
+  created $adff cell `$procdff$1317' with positive edge clock and positive level reset.
+
+2.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 20 empty switches in `\spi_slave.$rtl/spi_slave.v:141$proc$30'.
+Removing empty process `spi_slave.$rtl/spi_slave.v:141$proc$30'.
+Removing empty process `spi_slave.$rtl/spi_slave.v:50$proc$11'.
+Cleaned up 20 empty switches.
+
+2.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_slave.
+<suppressed ~87 debug messages>
+
+2.3. Executing CHECK pass (checking for obvious problems).
+Checking module spi_slave...
+Found and reported 0 problems.
+
+2.4. Executing FLATTEN pass (flatten design).
+
+2.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_slave.
+<suppressed ~8 debug messages>
+
+2.6. Executing CHECK pass (checking for obvious problems).
+Checking module spi_slave...
+Found and reported 0 problems.
+
+2.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_slave..
+Removed 242 unused cells and 752 unused wires.
+<suppressed ~255 debug messages>
+
+2.8. Executing OPT pass (performing simple optimizations).
+
+2.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_slave.
+
+2.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_slave'.
+Computing hashes of 258 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Computing hashes of 252 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Computing hashes of 250 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+<suppressed ~24 debug messages>
+Removed a total of 8 cells.
+
+2.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_slave..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$499.
+    dead port 1/2 on $mux $procmux$496.
+    dead port 2/2 on $mux $procmux$493.
+    dead port 2/2 on $mux $procmux$491.
+    dead port 1/2 on $mux $procmux$489.
+    dead port 2/2 on $mux $procmux$793.
+    dead port 1/2 on $mux $procmux$325.
+    dead port 1/2 on $mux $procmux$322.
+    dead port 1/2 on $mux $procmux$319.
+    dead port 2/2 on $mux $procmux$316.
+    dead port 2/2 on $mux $procmux$314.
+    dead port 1/2 on $mux $procmux$247.
+    dead port 1/2 on $mux $procmux$244.
+    dead port 1/2 on $mux $procmux$241.
+    dead port 1/2 on $mux $procmux$238.
+    dead port 2/2 on $mux $procmux$235.
+Removed 16 multiplexer ports.
+<suppressed ~283 debug messages>
+
+2.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_slave.
+Performed a total of 0 changes.
+
+2.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_slave'.
+Computing hashes of 234 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Computing hashes of 231 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Computing hashes of 230 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+<suppressed ~12 debug messages>
+Removed a total of 4 cells.
+
+2.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_slave..
+Removed 0 unused cells and 29 unused wires.
+<suppressed ~1 debug messages>
+
+2.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_slave.
+
+2.8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_slave..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~274 debug messages>
+
+2.8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_slave.
+Performed a total of 0 changes.
+
+2.8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_slave'.
+Computing hashes of 230 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Removed a total of 0 cells.
+
+2.8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_slave..
+
+2.8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_slave.
+
+2.8.16. Finished fast OPT passes. (There is nothing left to do.)
+
+2.9. Executing FSM pass (extract and optimize FSM).
+
+2.9.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+2.9.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+2.9.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+2.9.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_slave..
+
+2.9.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+2.9.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+2.9.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+2.9.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+2.10. Executing OPT pass (performing simple optimizations).
+
+2.10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_slave.
+
+2.10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_slave'.
+Computing hashes of 230 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Removed a total of 0 cells.
+
+2.10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_slave..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~274 debug messages>
+
+2.10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_slave.
+Performed a total of 0 changes.
+
+2.10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_slave'.
+Computing hashes of 230 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Removed a total of 0 cells.
+
+2.10.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$1192 ($adff) from module spi_slave (D = $0\clk_idle[0:0], Q = \clk_idle).
+Adding EN signal on $procdff$1187 ($adff) from module spi_slave (D = $0\word_gap[0:0], Q = \word_gap).
+Adding EN signal on $procdff$1182 ($adff) from module spi_slave (D = $0\active[0:0], Q = \active).
+Adding EN signal on $procdff$1177 ($adff) from module spi_slave (D = $0\lsb_r[0:0], Q = \lsb_r).
+Adding EN signal on $procdff$1172 ($adff) from module spi_slave (D = $0\rx_sh[31:0], Q = \rx_sh).
+Adding EN signal on $procdff$1167 ($adff) from module spi_slave (D = $0\tx_sh[31:0], Q = \tx_sh).
+Adding EN signal on $procdff$1162 ($adff) from module spi_slave (D = $0\bits_tot[5:0], Q = \bits_tot).
+Adding EN signal on $procdff$1157 ($adff) from module spi_slave (D = $0\bit_cnt[5:0], Q = \bit_cnt).
+Adding EN signal on $procdff$1152 ($adff) from module spi_slave (D = $0\miso[0:0], Q = \miso).
+Adding EN signal on $procdff$1142 ($adff) from module spi_slave (D = 1'1, Q = \overrun).
+Adding EN signal on $procdff$1137 ($adff) from module spi_slave (D = $0\busy[0:0], Q = \busy).
+Adding EN signal on $procdff$1127 ($adff) from module spi_slave (D = \rx_next, Q = \rx_data).
+
+2.10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_slave..
+Removed 11 unused cells and 11 unused wires.
+<suppressed ~12 debug messages>
+
+2.10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_slave.
+<suppressed ~10 debug messages>
+
+2.10.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.10.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_slave..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~197 debug messages>
+
+2.10.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_slave.
+Performed a total of 0 changes.
+
+2.10.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_slave'.
+Computing hashes of 274 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Computing hashes of 245 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Computing hashes of 238 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Computing hashes of 237 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Computing hashes of 236 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Computing hashes of 235 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Computing hashes of 234 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Computing hashes of 233 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+<suppressed ~123 debug messages>
+Removed a total of 41 cells.
+
+2.10.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.10.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_slave..
+Removed 0 unused cells and 40 unused wires.
+<suppressed ~1 debug messages>
+
+2.10.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_slave.
+
+2.10.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.10.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_slave..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~191 debug messages>
+
+2.10.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_slave.
+Performed a total of 0 changes.
+
+2.10.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_slave'.
+Computing hashes of 233 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Removed a total of 0 cells.
+
+2.10.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.10.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_slave..
+
+2.10.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_slave.
+
+2.10.23. Finished fast OPT passes. (There is nothing left to do.)
+
+2.11. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 4) from port B of cell spi_slave.$auto$simple.cc:214:make_patterns_logic$1336 ($ne).
+Removed top 1 bits (of 4) from port B of cell spi_slave.$auto$simple.cc:214:make_patterns_logic$1338 ($ne).
+Removed top 2 bits (of 4) from port B of cell spi_slave.$auto$simple.cc:214:make_patterns_logic$1342 ($ne).
+Removed top 1 bits (of 4) from port B of cell spi_slave.$auto$simple.cc:214:make_patterns_logic$1344 ($ne).
+Removed top 1 bits (of 3) from port B of cell spi_slave.$auto$simple.cc:214:make_patterns_logic$1397 ($ne).
+Removed top 3 bits (of 5) from port B of cell spi_slave.$auto$simple.cc:214:make_patterns_logic$1408 ($ne).
+Removed top 3 bits (of 5) from port B of cell spi_slave.$auto$simple.cc:214:make_patterns_logic$1410 ($ne).
+Removed top 27 bits (of 32) from port Y of cell spi_slave.$rtl/spi_slave.v:122$sub$123 ($sub).
+Removed top 1 bits (of 6) from port A of cell spi_slave.$rtl/spi_slave.v:122$sub$123 ($sub).
+Removed top 26 bits (of 32) from port B of cell spi_slave.$rtl/spi_slave.v:122$shiftx$125 ($shiftx).
+Removed top 27 bits (of 32) from port Y of cell spi_slave.$rtl/spi_slave.v:122$sub$163 ($sub).
+Removed top 1 bits (of 6) from port A of cell spi_slave.$rtl/spi_slave.v:122$sub$163 ($sub).
+Removed top 26 bits (of 32) from port B of cell spi_slave.$rtl/spi_slave.v:122$shiftx$165 ($shiftx).
+Removed top 4 bits (of 5) from port A of cell spi_slave.$rtl/spi_slave.v:110$eq$169 ($eq).
+Removed top 3 bits (of 5) from port A of cell spi_slave.$rtl/spi_slave.v:110$eq$171 ($eq).
+Removed top 3 bits (of 5) from port A of cell spi_slave.$rtl/spi_slave.v:110$eq$173 ($eq).
+Removed top 2 bits (of 5) from port A of cell spi_slave.$rtl/spi_slave.v:110$eq$175 ($eq).
+Removed top 2 bits (of 5) from port A of cell spi_slave.$rtl/spi_slave.v:110$eq$177 ($eq).
+Removed top 2 bits (of 5) from port A of cell spi_slave.$rtl/spi_slave.v:110$eq$179 ($eq).
+Removed top 2 bits (of 5) from port A of cell spi_slave.$rtl/spi_slave.v:110$eq$181 ($eq).
+Removed top 1 bits (of 5) from port A of cell spi_slave.$rtl/spi_slave.v:110$eq$183 ($eq).
+Removed top 1 bits (of 5) from port A of cell spi_slave.$rtl/spi_slave.v:110$eq$185 ($eq).
+Removed top 1 bits (of 5) from port A of cell spi_slave.$rtl/spi_slave.v:110$eq$187 ($eq).
+Removed top 1 bits (of 5) from port A of cell spi_slave.$rtl/spi_slave.v:110$eq$189 ($eq).
+Removed top 1 bits (of 5) from port A of cell spi_slave.$rtl/spi_slave.v:110$eq$191 ($eq).
+Removed top 1 bits (of 5) from port A of cell spi_slave.$rtl/spi_slave.v:110$eq$193 ($eq).
+Removed top 1 bits (of 5) from port A of cell spi_slave.$rtl/spi_slave.v:110$eq$195 ($eq).
+Removed top 1 bits (of 5) from port A of cell spi_slave.$rtl/spi_slave.v:110$eq$197 ($eq).
+Removed top 27 bits (of 32) from wire spi_slave.$rtl/spi_slave.v:122$mod$124_Y.
+Removed top 27 bits (of 32) from wire spi_slave.$rtl/spi_slave.v:122$sub$123_Y.
+Removed top 27 bits (of 32) from wire spi_slave.$rtl/spi_slave.v:122$sub$152_Y.
+Removed top 27 bits (of 32) from wire spi_slave.$rtl/spi_slave.v:122$mod$153_Y.
+
+2.12. Executing PEEPOPT pass (run peephole optimizers).
+
+2.13. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_slave..
+Removed 0 unused cells and 6 unused wires.
+<suppressed ~1 debug messages>
+
+2.14. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module spi_slave:
+  creating $macc model for $rtl/spi_slave.v:122$sub$163 ($sub).
+  creating $macc model for $rtl/spi_slave.v:190$sub$130 ($sub).
+  creating $macc model for $rtl/spi_slave.v:122$sub$123 ($sub).
+  creating $macc model for $rtl/spi_slave.v:104$sub$28 ($sub).
+  creating $macc model for $rtl/spi_slave.v:104$sub$27 ($sub).
+  creating $macc model for $rtl/spi_slave.v:103$add$26 ($add).
+  merging $macc model for $rtl/spi_slave.v:104$sub$27 into $rtl/spi_slave.v:104$sub$28.
+  creating $alu model for $macc $rtl/spi_slave.v:103$add$26.
+  creating $alu model for $macc $rtl/spi_slave.v:122$sub$123.
+  creating $alu model for $macc $rtl/spi_slave.v:190$sub$130.
+  creating $alu model for $macc $rtl/spi_slave.v:122$sub$163.
+  creating $macc cell for $rtl/spi_slave.v:104$sub$28: $auto$alumacc.cc:427:replace_macc$1444
+  creating $alu model for $rtl/spi_slave.v:45$gt$8 ($gt): new $alu
+  creating $alu cell for $rtl/spi_slave.v:45$gt$8: $auto$alumacc.cc:578:replace_alu$1446
+  creating $alu cell for $rtl/spi_slave.v:122$sub$163: $auto$alumacc.cc:578:replace_alu$1457
+  creating $alu cell for $rtl/spi_slave.v:190$sub$130: $auto$alumacc.cc:578:replace_alu$1460
+  creating $alu cell for $rtl/spi_slave.v:122$sub$123: $auto$alumacc.cc:578:replace_alu$1463
+  creating $alu cell for $rtl/spi_slave.v:103$add$26: $auto$alumacc.cc:578:replace_alu$1466
+  created 5 $alu and 1 $macc cells.
+
+2.15. Executing SHARE pass (SAT-based resource sharing).
+
+2.16. Executing OPT pass (performing simple optimizations).
+
+2.16.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_slave.
+<suppressed ~1 debug messages>
+
+2.16.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_slave'.
+Computing hashes of 237 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Removed a total of 0 cells.
+
+2.16.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_slave..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~191 debug messages>
+
+2.16.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_slave.
+Performed a total of 0 changes.
+
+2.16.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_slave'.
+Computing hashes of 237 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Removed a total of 0 cells.
+
+2.16.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.16.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_slave..
+Removed 2 unused cells and 3 unused wires.
+<suppressed ~3 debug messages>
+
+2.16.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_slave.
+
+2.16.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.16.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_slave..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~191 debug messages>
+
+2.16.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_slave.
+Performed a total of 0 changes.
+
+2.16.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_slave'.
+Computing hashes of 235 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Removed a total of 0 cells.
+
+2.16.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.16.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_slave..
+
+2.16.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_slave.
+
+2.16.16. Finished fast OPT passes. (There is nothing left to do.)
+
+2.17. Executing MEMORY pass.
+
+2.17.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+2.17.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+2.17.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+2.17.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+2.17.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+2.17.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_slave..
+
+2.17.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+2.17.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+2.17.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_slave..
+
+2.17.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.18. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_slave..
+
+2.19. Executing OPT pass (performing simple optimizations).
+
+2.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_slave.
+<suppressed ~49 debug messages>
+
+2.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_slave'.
+Computing hashes of 197 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Removed a total of 0 cells.
+
+2.19.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.19.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_slave..
+Removed 0 unused cells and 48 unused wires.
+<suppressed ~1 debug messages>
+
+2.19.5. Finished fast OPT passes.
+
+2.20. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+2.21. Executing OPT pass (performing simple optimizations).
+
+2.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_slave.
+<suppressed ~3 debug messages>
+
+2.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_slave'.
+Computing hashes of 197 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Removed a total of 0 cells.
+
+2.21.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_slave..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~125 debug messages>
+
+2.21.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_slave.
+Performed a total of 0 changes.
+
+2.21.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_slave'.
+Computing hashes of 197 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Removed a total of 0 cells.
+
+2.21.6. Executing OPT_SHARE pass.
+
+2.21.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.21.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_slave..
+
+2.21.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_slave.
+
+2.21.10. Finished fast OPT passes. (There is nothing left to do.)
+
+2.22. Executing TECHMAP pass (map to technology primitives).
+
+2.22.1. Executing Verilog-2005 frontend: oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+2.22.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper maccmap for cells of type $macc_v2.
+  add \bits_tot [4:0] (5 bits, unsigned)
+  sub \bit_cnt [4:0] (5 bits, unsigned)
+  add 5'11111 (5 bits, unsigned)
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $ne.
+Using template $paramod$fc972a7a46956c1788f3cb5257b53c8f1df2d0cc\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $or.
+Using template $paramod$dc04b7d98e503a7bab16fce2df70e6e2c5ca34d6\_90_alu for cells of type $alu.
+Using template $paramod$a04dd9d4d8b430140c4ff94b50470fb380fda2a0\_90_alu for cells of type $alu.
+Using template $paramod$32efbfac1c4dc57230cf86180788fdfd12e3b511\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $logic_and.
+Using template $paramod$constmap:5fd06f6eb3b4d49ab3faa0b5c76e16770a1c2177$paramod$00907cac109f586baf7e00101cd19918c729f0d4\_90_shift_shiftx for cells of type $shiftx.
+Using template $paramod$constmap:72fea0cd6927a9676e2527442b1383d29cc29f51$paramod$e194a9e890de0a7be18db8bd15a1479dea055e42\_90_shift_shiftx for cells of type $shiftx.
+Using extmapper simplemap for cells of type $adff.
+Using template $paramod$b18e16801adf491a64caa0542270798e5d4ac6b6\_90_alu for cells of type $alu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000001 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000001 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000101 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000101 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000110 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000110 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~1279 debug messages>
+
+2.23. Executing OPT pass (performing simple optimizations).
+
+2.23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_slave.
+<suppressed ~840 debug messages>
+
+2.23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_slave'.
+Computing hashes of 1271 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Computing hashes of 1145 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Computing hashes of 1092 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Computing hashes of 1074 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Computing hashes of 1071 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Computing hashes of 1069 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Computing hashes of 1066 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Computing hashes of 1065 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+<suppressed ~618 debug messages>
+Removed a total of 206 cells.
+
+2.23.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_slave..
+Removed 434 unused cells and 580 unused wires.
+<suppressed ~435 debug messages>
+
+2.23.5. Finished fast OPT passes.
+
+2.24. Executing ABC pass (technology mapping using ABC).
+
+2.24.1. Summary of detected clock domains:
+  19 cells in clk=\clk, en=$auto$simple.cc:230:make_patterns_logic$1323, arst=!\rst_n, srst={ }
+  14 cells in clk=\clk, en=$auto$simple.cc:230:make_patterns_logic$1332, arst=!\rst_n, srst={ }
+  88 cells in clk=\clk, en=$auto$simple.cc:230:make_patterns_logic$1411, arst=!\rst_n, srst={ }
+  9 cells in clk=\clk, en=$auto$simple.cc:230:make_patterns_logic$1418, arst=!\rst_n, srst={ }
+  123 cells in clk=\clk, en={ }, arst=!\rst_n, srst={ }
+  14 cells in clk=\clk, en=$auto$simple.cc:230:make_patterns_logic$1345, arst=!\rst_n, srst={ }
+  169 cells in clk=\clk, en=$auto$simple.cc:230:make_patterns_logic$1356, arst=!\rst_n, srst={ }
+  158 cells in clk=\clk, en=$auto$simple.cc:230:make_patterns_logic$1367, arst=!\rst_n, srst={ }
+  37 cells in clk=\clk, en=$auto$simple.cc:230:make_patterns_logic$1438, arst=!\rst_n, srst={ }
+
+2.24.2. Extracting gate netlist of module `\spi_slave' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$simple.cc:230:make_patterns_logic$1323, asynchronously reset by !\rst_n
+
+2.24.3. Extracting gate netlist of module `\spi_slave' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$simple.cc:230:make_patterns_logic$1332, asynchronously reset by !\rst_n
+
+2.24.4. Extracting gate netlist of module `\spi_slave' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$simple.cc:230:make_patterns_logic$1411, asynchronously reset by !\rst_n
+
+2.24.5. Extracting gate netlist of module `\spi_slave' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$simple.cc:230:make_patterns_logic$1418, asynchronously reset by !\rst_n
+
+2.24.6. Extracting gate netlist of module `\spi_slave' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, asynchronously reset by !\rst_n
+
+2.24.7. Extracting gate netlist of module `\spi_slave' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$simple.cc:230:make_patterns_logic$1345, asynchronously reset by !\rst_n
+
+2.24.8. Extracting gate netlist of module `\spi_slave' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$simple.cc:230:make_patterns_logic$1356, asynchronously reset by !\rst_n
+
+2.24.9. Extracting gate netlist of module `\spi_slave' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$simple.cc:230:make_patterns_logic$1367, asynchronously reset by !\rst_n
+
+2.24.10. Extracting gate netlist of module `\spi_slave' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$simple.cc:230:make_patterns_logic$1438, asynchronously reset by !\rst_n
+
+2.24.10.1. Executed ABC.
+Extracted 18 gates and 32 wires to a netlist network with 13 inputs and 9 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Nov 10 2026 07:44:26)
+ABC: abc 01> empty
+ABC: abc 01> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+ABC: abc 07> echo YOSYS_ABC_END
+
+2.24.10.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        7
+ABC RESULTS:            ANDNOT cells:        1
+ABC RESULTS:              NAND cells:        2
+ABC RESULTS:               NOR cells:        2
+ABC RESULTS:               NOT cells:        1
+ABC RESULTS:                OR cells:        2
+ABC RESULTS:             ORNOT cells:        4
+ABC RESULTS:        internal signals:       10
+ABC RESULTS:           input signals:       13
+ABC RESULTS:          output signals:        9
+Removing temp directory.
+
+2.24.10.1. Executed ABC.
+Extracted 13 gates and 27 wires to a netlist network with 13 inputs and 10 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Nov 10 2026 07:44:26)
+ABC: abc 01> empty
+ABC: abc 01> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+ABC: abc 07> echo YOSYS_ABC_END
+
+2.24.10.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        5
+ABC RESULTS:            ANDNOT cells:        1
+ABC RESULTS:               MUX cells:        1
+ABC RESULTS:               NOR cells:        1
+ABC RESULTS:               NOT cells:        1
+ABC RESULTS:                OR cells:        3
+ABC RESULTS:        internal signals:        4
+ABC RESULTS:           input signals:       13
+ABC RESULTS:          output signals:       10
+Removing temp directory.
+
+2.24.10.1. Executed ABC.
+Extracted 87 gates and 161 wires to a netlist network with 73 inputs and 2 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Nov 10 2026 07:44:26)
+ABC: abc 01> empty
+ABC: abc 01> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+ABC: abc 07> echo YOSYS_ABC_END
+
+2.24.10.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:       21
+ABC RESULTS:            ANDNOT cells:        7
+ABC RESULTS:               MUX cells:       20
+ABC RESULTS:              NAND cells:       40
+ABC RESULTS:               NOR cells:        6
+ABC RESULTS:                OR cells:       16
+ABC RESULTS:             ORNOT cells:       13
+ABC RESULTS:              XNOR cells:        2
+ABC RESULTS:        internal signals:       86
+ABC RESULTS:           input signals:       73
+ABC RESULTS:          output signals:        2
+Removing temp directory.
+
+2.24.10.1. Executed ABC.
+Extracted 8 gates and 16 wires to a netlist network with 8 inputs and 4 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Nov 10 2026 07:44:26)
+ABC: abc 01> empty
+ABC: abc 01> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+ABC: abc 07> echo YOSYS_ABC_END
+
+2.24.10.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        3
+ABC RESULTS:            ANDNOT cells:        2
+ABC RESULTS:               MUX cells:        1
+ABC RESULTS:               NOT cells:        1
+ABC RESULTS:        internal signals:        4
+ABC RESULTS:           input signals:        8
+ABC RESULTS:          output signals:        4
+Removing temp directory.
+
+2.24.10.1. Executed ABC.
+Extracted 112 gates and 166 wires to a netlist network with 53 inputs and 43 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Nov 10 2026 07:44:26)
+ABC: abc 01> empty
+ABC: abc 01> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+ABC: abc 07> echo YOSYS_ABC_END
+
+2.24.10.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        7
+ABC RESULTS:            ANDNOT cells:        7
+ABC RESULTS:               MUX cells:       31
+ABC RESULTS:              NAND cells:       15
+ABC RESULTS:               NOR cells:        2
+ABC RESULTS:               NOT cells:        4
+ABC RESULTS:                OR cells:       35
+ABC RESULTS:             ORNOT cells:        1
+ABC RESULTS:               XOR cells:        2
+ABC RESULTS:        internal signals:       70
+ABC RESULTS:           input signals:       53
+ABC RESULTS:          output signals:       43
+Removing temp directory.
+
+2.24.10.1. Executed ABC.
+Extracted 13 gates and 23 wires to a netlist network with 9 inputs and 8 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Nov 10 2026 07:44:26)
+ABC: abc 01> empty
+ABC: abc 01> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+ABC: abc 07> echo YOSYS_ABC_END
+
+2.24.10.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        4
+ABC RESULTS:            ANDNOT cells:        1
+ABC RESULTS:              NAND cells:        1
+ABC RESULTS:               NOT cells:        3
+ABC RESULTS:                OR cells:        2
+ABC RESULTS:             ORNOT cells:        1
+ABC RESULTS:        internal signals:        6
+ABC RESULTS:           input signals:        9
+ABC RESULTS:          output signals:        8
+Removing temp directory.
+
+2.24.10.1. Executed ABC.
+Extracted 130 gates and 198 wires to a netlist network with 66 inputs and 42 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Nov 10 2026 07:44:26)
+ABC: abc 01> empty
+ABC: abc 01> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+ABC: abc 07> echo YOSYS_ABC_END
+
+2.24.10.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:       27
+ABC RESULTS:            ANDNOT cells:        5
+ABC RESULTS:               BUF cells:        1
+ABC RESULTS:               MUX cells:       33
+ABC RESULTS:              NAND cells:       38
+ABC RESULTS:               NOR cells:       10
+ABC RESULTS:               NOT cells:        7
+ABC RESULTS:                OR cells:        8
+ABC RESULTS:              XNOR cells:        2
+ABC RESULTS:               XOR cells:        6
+ABC RESULTS:        internal signals:       90
+ABC RESULTS:           input signals:       66
+ABC RESULTS:          output signals:       42
+Removing temp directory.
+
+2.24.10.1. Executed ABC.
+Extracted 120 gates and 175 wires to a netlist network with 54 inputs and 51 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: abc 07> empty
+ABC: abc 07> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+ABC: abc 13> echo YOSYS_ABC_END
+
+2.24.10.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:       50
+ABC RESULTS:            ANDNOT cells:        1
+ABC RESULTS:              NAND cells:        3
+ABC RESULTS:               NOT cells:        6
+ABC RESULTS:                OR cells:        5
+ABC RESULTS:              XNOR cells:       10
+ABC RESULTS:               XOR cells:        4
+ABC RESULTS:        internal signals:       70
+ABC RESULTS:           input signals:       54
+ABC RESULTS:          output signals:       51
+Removing temp directory.
+
+2.24.10.1. Executed ABC.
+Extracted 5 gates and 12 wires to a netlist network with 7 inputs and 4 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: abc 07> empty
+ABC: abc 07> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+ABC: abc 13> echo YOSYS_ABC_END
+
+2.24.10.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        1
+ABC RESULTS:               MUX cells:        1
+ABC RESULTS:               NOT cells:        1
+ABC RESULTS:                OR cells:        2
+ABC RESULTS:        internal signals:        1
+ABC RESULTS:           input signals:        7
+ABC RESULTS:          output signals:        4
+Removing temp directory.
+Removing global temp directory.
+
+2.25. Executing OPT pass (performing simple optimizations).
+
+2.25.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_slave.
+<suppressed ~2 debug messages>
+
+2.25.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_slave'.
+Computing hashes of 624 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Computing hashes of 621 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+Computing hashes of 620 cells of `\spi_slave'.
+Finding duplicate cells in `\spi_slave'.
+<suppressed ~12 debug messages>
+Removed a total of 4 cells.
+
+2.25.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.25.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_slave..
+Removed 1 unused cells and 625 unused wires.
+<suppressed ~2 debug messages>
+
+2.25.5. Finished fast OPT passes.
+
+2.26. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `spi_slave'. Setting top module to spi_slave.
+
+2.26.1. Analyzing design hierarchy..
+Top module:  \spi_slave
+
+2.26.2. Analyzing design hierarchy..
+Top module:  \spi_slave
+Removed 0 unused modules.
+
+2.27. Printing statistics.
+
+=== spi_slave ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      445 wires
+      684 wire bits
+       50 public wires
+      234 public wire bits
+       19 ports
+       86 port bits
+      619 cells
+       25   $_ANDNOT_
+      123   $_AND_
+      113   $_DFFE_PN0P_
+        1   $_DFFE_PN1P_
+        8   $_DFF_PN0_
+        3   $_DFF_PN1_
+       87   $_MUX_
+       99   $_NAND_
+       19   $_NOR_
+       23   $_NOT_
+       19   $_ORNOT_
+       73   $_OR_
+       14   $_XNOR_
+       12   $_XOR_
+
+2.28. Executing CHECK pass (checking for obvious problems).
+Checking module spi_slave...
+Found and reported 0 problems.
+
+3. Executing ABC pass (technology mapping using ABC).
+
+3.1. Summary of detected clock domains:
+  17 cells in clk=\clk, en=$abc$4107$auto$simple.cc:230:make_patterns_logic$1323, arst=!\rst_n, srst={ }
+  14 cells in clk=\clk, en=$abc$4108$auto$simple.cc:230:make_patterns_logic$1332, arst=!\rst_n, srst={ }
+  126 cells in clk=\clk, en=$abc$4109$auto$simple.cc:230:make_patterns_logic$1411, arst=!\rst_n, srst={ }
+  7 cells in clk=\clk, en=$abc$4110$auto$simple.cc:230:make_patterns_logic$1418, arst=!\rst_n, srst={ }
+  112 cells in clk=\clk, en={ }, arst=!\rst_n, srst={ }
+  11 cells in clk=\clk, en=$abc$4112$auto$simple.cc:230:make_patterns_logic$1345, arst=!\rst_n, srst={ }
+  171 cells in clk=\clk, en=$abc$4113$auto$simple.cc:230:make_patterns_logic$1356, arst=!\rst_n, srst={ }
+  121 cells in clk=\clk, en=$abc$4114$auto$simple.cc:230:make_patterns_logic$1367, arst=!\rst_n, srst={ }
+  40 cells in clk=\clk, en=$abc$4115$auto$simple.cc:230:make_patterns_logic$1438, arst=!\rst_n, srst={ }
+
+3.2. Extracting gate netlist of module `\spi_slave' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$4107$auto$simple.cc:230:make_patterns_logic$1323, asynchronously reset by !\rst_n
+
+3.3. Extracting gate netlist of module `\spi_slave' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$4108$auto$simple.cc:230:make_patterns_logic$1332, asynchronously reset by !\rst_n
+
+3.4. Extracting gate netlist of module `\spi_slave' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$4109$auto$simple.cc:230:make_patterns_logic$1411, asynchronously reset by !\rst_n
+
+3.5. Extracting gate netlist of module `\spi_slave' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$4110$auto$simple.cc:230:make_patterns_logic$1418, asynchronously reset by !\rst_n
+
+3.6. Extracting gate netlist of module `\spi_slave' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, asynchronously reset by !\rst_n
+
+3.7. Extracting gate netlist of module `\spi_slave' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$4112$auto$simple.cc:230:make_patterns_logic$1345, asynchronously reset by !\rst_n
+
+3.8. Extracting gate netlist of module `\spi_slave' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$4113$auto$simple.cc:230:make_patterns_logic$1356, asynchronously reset by !\rst_n
+
+3.9. Extracting gate netlist of module `\spi_slave' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$4114$auto$simple.cc:230:make_patterns_logic$1367, asynchronously reset by !\rst_n
+
+3.10. Extracting gate netlist of module `\spi_slave' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$4115$auto$simple.cc:230:make_patterns_logic$1438, asynchronously reset by !\rst_n
+
+3.10.1. Executed ABC.
+Extracted 16 gates and 30 wires to a netlist network with 14 inputs and 9 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Nov 10 2026 07:44:26)
+ABC: abc 01> empty
+ABC: abc 01> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+ABC: abc 07> echo YOSYS_ABC_END
+
+3.10.2. Re-integrating ABC results.
+ABC RESULTS:              NAND cells:        9
+ABC RESULTS:               NOR cells:        7
+ABC RESULTS:               NOT cells:        7
+ABC RESULTS:        internal signals:        7
+ABC RESULTS:           input signals:       14
+ABC RESULTS:          output signals:        9
+Removing temp directory.
+
+3.10.1. Executed ABC.
+Extracted 13 gates and 26 wires to a netlist network with 13 inputs and 11 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Nov 10 2026 07:44:26)
+ABC: abc 01> empty
+ABC: abc 01> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+ABC: abc 07> echo YOSYS_ABC_END
+
+3.10.2. Re-integrating ABC results.
+ABC RESULTS:              NAND cells:        5
+ABC RESULTS:               NOR cells:        8
+ABC RESULTS:               NOT cells:       11
+ABC RESULTS:        internal signals:        2
+ABC RESULTS:           input signals:       13
+ABC RESULTS:          output signals:       11
+Removing temp directory.
+
+3.10.1. Executed ABC.
+Extracted 125 gates and 200 wires to a netlist network with 75 inputs and 2 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Nov 10 2026 07:44:26)
+ABC: abc 01> empty
+ABC: abc 01> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+ABC: abc 07> echo YOSYS_ABC_END
+
+3.10.2. Re-integrating ABC results.
+ABC RESULTS:              NAND cells:       89
+ABC RESULTS:               NOR cells:       84
+ABC RESULTS:               NOT cells:       31
+ABC RESULTS:        internal signals:      123
+ABC RESULTS:           input signals:       75
+ABC RESULTS:          output signals:        2
+Removing temp directory.
+
+3.10.1. Executed ABC.
+Extracted 6 gates and 14 wires to a netlist network with 8 inputs and 3 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Nov 10 2026 07:44:26)
+ABC: abc 01> empty
+ABC: abc 01> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+ABC: abc 07> echo YOSYS_ABC_END
+
+3.10.2. Re-integrating ABC results.
+ABC RESULTS:              NAND cells:        6
+ABC RESULTS:               NOR cells:        2
+ABC RESULTS:               NOT cells:        3
+ABC RESULTS:        internal signals:        3
+ABC RESULTS:           input signals:        8
+ABC RESULTS:          output signals:        3
+Removing temp directory.
+
+3.10.1. Executed ABC.
+Extracted 101 gates and 154 wires to a netlist network with 53 inputs and 43 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Nov 10 2026 07:44:26)
+ABC: abc 01> empty
+ABC: abc 01> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+ABC: abc 07> echo YOSYS_ABC_END
+
+3.10.2. Re-integrating ABC results.
+ABC RESULTS:              NAND cells:      153
+ABC RESULTS:               NOR cells:       61
+ABC RESULTS:               NOT cells:       20
+ABC RESULTS:        internal signals:       58
+ABC RESULTS:           input signals:       53
+ABC RESULTS:          output signals:       43
+Removing temp directory.
+
+3.10.1. Executed ABC.
+Extracted 10 gates and 18 wires to a netlist network with 8 inputs and 7 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Nov 10 2026 07:44:26)
+ABC: abc 01> empty
+ABC: abc 01> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+ABC: abc 07> echo YOSYS_ABC_END
+
+3.10.2. Re-integrating ABC results.
+ABC RESULTS:              NAND cells:        6
+ABC RESULTS:               NOR cells:        2
+ABC RESULTS:               NOT cells:        5
+ABC RESULTS:        internal signals:        3
+ABC RESULTS:           input signals:        8
+ABC RESULTS:          output signals:        7
+Removing temp directory.
+
+3.10.1. Executed ABC.
+Extracted 132 gates and 198 wires to a netlist network with 66 inputs and 40 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Nov 10 2026 07:44:26)
+ABC: abc 01> empty
+ABC: abc 01> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+ABC: abc 07> echo YOSYS_ABC_END
+
+3.10.2. Re-integrating ABC results.
+ABC RESULTS:              NAND cells:      136
+ABC RESULTS:               NOR cells:       78
+ABC RESULTS:               NOT cells:       35
+ABC RESULTS:        internal signals:       92
+ABC RESULTS:           input signals:       66
+ABC RESULTS:          output signals:       40
+Removing temp directory.
+
+3.10.1. Executed ABC.
+Extracted 83 gates and 137 wires to a netlist network with 54 inputs and 53 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: empty
+ABC: abc 07> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+ABC: abc 13> echo YOSYS_ABC_END
+
+3.10.2. Re-integrating ABC results.
+ABC RESULTS:              NAND cells:       36
+ABC RESULTS:               NOR cells:       64
+ABC RESULTS:               NOT cells:       57
+ABC RESULTS:        internal signals:       30
+ABC RESULTS:           input signals:       54
+ABC RESULTS:          output signals:       53
+Removing temp directory.
+
+3.10.1. Executed ABC.
+Extracted 8 gates and 15 wires to a netlist network with 7 inputs and 5 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: abc 07> empty
+ABC: abc 07> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+ABC: abc 13> echo YOSYS_ABC_END
+
+3.10.2. Re-integrating ABC results.
+ABC RESULTS:              NAND cells:        5
+ABC RESULTS:               NOR cells:        2
+ABC RESULTS:               NOT cells:        4
+ABC RESULTS:        internal signals:        3
+ABC RESULTS:           input signals:        7
+ABC RESULTS:          output signals:        5
+Removing temp directory.
+Removing global temp directory.
+
+4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_slave..
+Removed 0 unused cells and 790 unused wires.
+<suppressed ~1 debug messages>
+
+5. Printing statistics.
+
+=== spi_slave ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      879 wires
+     1118 wire bits
+       50 public wires
+      234 public wire bits
+       19 ports
+       86 port bits
+     1051 cells
+      113   $_DFFE_PN0P_
+        1   $_DFFE_PN1P_
+        8   $_DFF_PN0_
+        3   $_DFF_PN1_
+      445   $_NAND_
+      308   $_NOR_
+      173   $_NOT_
+
+End of script. Logfile hash: 2bc71d83f7, time: 0.33s, user: 0.20s, system: 0.02s, MEM: 28.73 MB peak
+Yosys 0.70+368 (git sha1 7cf88aca6, Release, Clang /usr/bin/clang++ 21.1.8)
+Time spent: 78% 2x abc (0 sec), 4% 27x opt_expr (0 sec), ...

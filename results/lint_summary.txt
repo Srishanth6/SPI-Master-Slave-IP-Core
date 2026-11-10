@@ -1,0 +1,2 @@
+Verilator 5.055  --lint-only -Wall  (top spi_loopback, plus master, slave, apb on their own)
+No warnings.

@@ -1,0 +1,6 @@
+Tool versions used for the numbers in this tree:
+Icarus Verilog version 14.0 (devel) (s20260301-948-gbd5af2914-dirty)
+Verilator 5.055 devel rev v5.054-183-g9040f8666 (mod)
+Yosys 0.70+368 (git sha1 7cf88aca6, Release, Clang /usr/bin/clang++ 21.1.8)
+"nextpnr-ice40" -- Next Generation Place and Route (Version nextpnr-0.11.1-89-g445e2a65)
+SBY v0.70-9-g79fc9ed

@@ -1,0 +1,21 @@
+
+5. Printing statistics.
+
+=== spi_master ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     1335 wires
+     1599 wire bits
+       38 public wires
+      258 public wire bits
+       21 ports
+      103 port bits
+     1511 cells
+      133   $_DFFE_PN0P_
+        2   $_DFFE_PN1P_
+        1   $_DFF_PN0_
+      531   $_NAND_
+      535   $_NOR_
+      309   $_NOT_
+

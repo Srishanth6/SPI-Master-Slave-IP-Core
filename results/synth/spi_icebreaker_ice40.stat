@@ -1,0 +1,22 @@
+
+7. Printing statistics.
+
+=== spi_icebreaker ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      256 wires
+      549 wire bits
+      256 public wires
+      549 public wire bits
+        8 ports
+        8 port bits
+      336 cells
+        3   $scopeinfo
+       22   SB_CARRY
+       87   SB_DFFER
+        1   SB_DFFES
+       13   SB_DFFR
+        4   SB_DFFS
+      206   SB_LUT4
+

@@ -1,0 +1,2 @@
+VCD info: dumpfile waves/tb_spi_waves.vcd opened for output.
+tb/tb_spi_waves.v:41: $finish called at 6570000 (1ps)

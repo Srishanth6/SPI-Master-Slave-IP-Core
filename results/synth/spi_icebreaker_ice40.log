@@ -1,0 +1,2728 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.70+368 (git sha1 7cf88aca6, Release, Clang /usr/bin/clang++ 21.1.8)
+
+-- Running command `read_verilog fpga/spi_icebreaker.v rtl/*.v; synth_ice40 -top spi_icebreaker; tee -o results/synth/spi_icebreaker_ice40.stat stat; write_json results/synth/spi_icebreaker_ice40.json' --
+
+1. Executing Verilog-2005 frontend: fpga/spi_icebreaker.v
+Parsing Verilog input from `fpga/spi_icebreaker.v' to AST representation.
+Generating RTLIL representation for module `\spi_icebreaker'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: rtl/spi_apb.v
+Parsing Verilog input from `rtl/spi_apb.v' to AST representation.
+Generating RTLIL representation for module `\spi_apb'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: rtl/spi_loopback.v
+Parsing Verilog input from `rtl/spi_loopback.v' to AST representation.
+Generating RTLIL representation for module `\spi_loopback'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: rtl/spi_master.v
+Parsing Verilog input from `rtl/spi_master.v' to AST representation.
+Generating RTLIL representation for module `\spi_master'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: rtl/spi_slave.v
+Parsing Verilog input from `rtl/spi_slave.v' to AST representation.
+Generating RTLIL representation for module `\spi_slave'.
+Successfully finished Verilog frontend.
+
+6. Executing SYNTH_ICE40 pass.
+
+6.1. Executing Verilog-2005 frontend: oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v
+Parsing Verilog input from `oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\SB_IO'.
+Generating RTLIL representation for module `\SB_GB_IO'.
+Generating RTLIL representation for module `\SB_GB'.
+Generating RTLIL representation for module `\SB_LUT4'.
+Generating RTLIL representation for module `\SB_CARRY'.
+Generating RTLIL representation for module `\SB_DFF'.
+Generating RTLIL representation for module `\SB_DFFE'.
+Generating RTLIL representation for module `\SB_DFFSR'.
+Generating RTLIL representation for module `\SB_DFFR'.
+Generating RTLIL representation for module `\SB_DFFSS'.
+Generating RTLIL representation for module `\SB_DFFS'.
+Generating RTLIL representation for module `\SB_DFFESR'.
+Generating RTLIL representation for module `\SB_DFFER'.
+Generating RTLIL representation for module `\SB_DFFESS'.
+Generating RTLIL representation for module `\SB_DFFES'.
+Generating RTLIL representation for module `\SB_DFFN'.
+Generating RTLIL representation for module `\SB_DFFNE'.
+Generating RTLIL representation for module `\SB_DFFNSR'.
+Generating RTLIL representation for module `\SB_DFFNR'.
+Generating RTLIL representation for module `\SB_DFFNSS'.
+Generating RTLIL representation for module `\SB_DFFNS'.
+Generating RTLIL representation for module `\SB_DFFNESR'.
+Generating RTLIL representation for module `\SB_DFFNER'.
+Generating RTLIL representation for module `\SB_DFFNESS'.
+Generating RTLIL representation for module `\SB_DFFNES'.
+Generating RTLIL representation for module `\SB_RAM40_4K'.
+Generating RTLIL representation for module `\SB_RAM40_4KNR'.
+Generating RTLIL representation for module `\SB_RAM40_4KNW'.
+Generating RTLIL representation for module `\SB_RAM40_4KNRNW'.
+Generating RTLIL representation for module `\ICESTORM_LC'.
+Generating RTLIL representation for module `\SB_PLL40_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2F_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_2F_PAD'.
+Generating RTLIL representation for module `\SB_WARMBOOT'.
+Generating RTLIL representation for module `\SB_SPRAM256KA'.
+Generating RTLIL representation for module `\SB_HFOSC'.
+Generating RTLIL representation for module `\SB_LFOSC'.
+Generating RTLIL representation for module `\SB_RGBA_DRV'.
+Generating RTLIL representation for module `\SB_LED_DRV_CUR'.
+Generating RTLIL representation for module `\SB_RGB_DRV'.
+Generating RTLIL representation for module `\SB_I2C'.
+Generating RTLIL representation for module `\SB_SPI'.
+Generating RTLIL representation for module `\SB_LEDDA_IP'.
+Generating RTLIL representation for module `\SB_FILTER_50NS'.
+Generating RTLIL representation for module `\SB_IO_I3C'.
+Generating RTLIL representation for module `\SB_IO_OD'.
+Generating RTLIL representation for module `\SB_MAC16'.
+Generating RTLIL representation for module `\ICESTORM_RAM'.
+Successfully finished Verilog frontend.
+
+6.2. Executing HIERARCHY pass (managing design hierarchy).
+
+6.2.1. Analyzing design hierarchy..
+Top module:  \spi_icebreaker
+Used module:     \spi_loopback
+Used module:         \spi_slave
+Used module:         \spi_master
+Parameter \MAX_WIDTH = 32
+
+6.2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\spi_loopback'.
+Parameter \MAX_WIDTH = 32
+Generating RTLIL representation for module `$paramod\spi_loopback\MAX_WIDTH=s32'00000000000000000000000000100000'.
+Parameter \MAX_WIDTH = 32
+Parameter \ASYNC = 0
+
+6.2.3. Executing AST frontend in derive mode using pre-parsed AST for module `\spi_slave'.
+Parameter \MAX_WIDTH = 32
+Parameter \ASYNC = 0
+Generating RTLIL representation for module `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave'.
+Parameter \MAX_WIDTH = 32
+
+6.2.4. Executing AST frontend in derive mode using pre-parsed AST for module `\spi_master'.
+Parameter \MAX_WIDTH = 32
+Generating RTLIL representation for module `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000'.
+
+6.2.5. Analyzing design hierarchy..
+Top module:  \spi_icebreaker
+Used module:     $paramod\spi_loopback\MAX_WIDTH=s32'00000000000000000000000000100000
+Used module:         \spi_slave
+Used module:         \spi_master
+Parameter \MAX_WIDTH = 32
+Parameter \ASYNC = 0
+Found cached RTLIL representation for module `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave'.
+Parameter \MAX_WIDTH = 32
+Found cached RTLIL representation for module `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000'.
+
+6.2.6. Analyzing design hierarchy..
+Top module:  \spi_icebreaker
+Used module:     $paramod\spi_loopback\MAX_WIDTH=s32'00000000000000000000000000100000
+Used module:         $paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave
+Used module:         $paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000
+
+6.2.7. Analyzing design hierarchy..
+Top module:  \spi_icebreaker
+Used module:     $paramod\spi_loopback\MAX_WIDTH=s32'00000000000000000000000000100000
+Used module:         $paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave
+Used module:         $paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000
+Removing unused module `\spi_slave'.
+Removing unused module `\spi_master'.
+Removing unused module `\spi_loopback'.
+Removing unused module `\spi_apb'.
+Removed 4 unused modules.
+
+6.3. Executing PROC pass (convert processes to netlists).
+
+6.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:50$proc$864'.
+Cleaned up 1 empty switch.
+
+6.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 16 switch rules as full_case in process $rtl/spi_master.v:95$proc$1111 in module $paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.
+Marked 14 switch rules as full_case in process $rtl/spi_slave.v:141$proc$883 in module $paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.
+Marked 1 switch rules as full_case in process $rtl/spi_slave.v:50$proc$864 in module $paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.
+Marked 3 switch rules as full_case in process $fpga/spi_icebreaker.v:51$proc$4 in module spi_icebreaker.
+Marked 1 switch rules as full_case in process $fpga/spi_icebreaker.v:42$proc$3 in module spi_icebreaker.
+Marked 1 switch rules as full_case in process $fpga/spi_icebreaker.v:27$proc$1 in module spi_icebreaker.
+Removed a total of 0 dead cases.
+
+6.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 13 redundant assignments.
+Promoted 30 assignments to connections.
+
+6.3.4. Executing PROC_INIT pass (extract init attributes).
+
+6.3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+Found async reset \rst_n in `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+Found async reset \rst_n in `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:50$proc$864'.
+Found async reset \rst_n_sync in `\spi_icebreaker.$fpga/spi_icebreaker.v:51$proc$4'.
+Found async reset \rst_n in `\spi_icebreaker.$fpga/spi_icebreaker.v:27$proc$1'.
+
+6.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~44 debug messages>
+
+6.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+     1/79: $6\mosi_first$func$rtl/spi_master.v:227$1086.$result[0:0]$1219
+     2/79: $5\mosi_first$func$rtl/spi_master.v:227$1086.$result[0:0]$1215
+     3/79: $5\mosi_first$func$rtl/spi_master.v:227$1086.lsb[0:0]$1218
+     4/79: $5\mosi_first$func$rtl/spi_master.v:227$1086.tot[5:0]$1217
+     5/79: $5\mosi_first$func$rtl/spi_master.v:227$1086.data[31:0]$1216
+     6/79: $4\mosi_first$func$rtl/spi_master.v:227$1086.lsb[0:0]$1214
+     7/79: $4\mosi_first$func$rtl/spi_master.v:227$1086.tot[5:0]$1213
+     8/79: $4\mosi_first$func$rtl/spi_master.v:227$1086.data[31:0]$1212
+     9/79: $4\mosi_first$func$rtl/spi_master.v:227$1086.$result[0:0]$1211
+    10/79: $7\mosi_first$func$rtl/spi_master.v:199$1085.$result[0:0]$1202
+    11/79: $6\mosi_first$func$rtl/spi_master.v:199$1085.$result[0:0]$1198
+    12/79: $6\mosi_first$func$rtl/spi_master.v:199$1085.lsb[0:0]$1201
+    13/79: $6\mosi_first$func$rtl/spi_master.v:199$1085.tot[5:0]$1200
+    14/79: $6\mosi_first$func$rtl/spi_master.v:199$1085.data[31:0]$1199
+    15/79: $5\mosi_first$func$rtl/spi_master.v:199$1085.lsb[0:0]$1197
+    16/79: $5\mosi_first$func$rtl/spi_master.v:199$1085.tot[5:0]$1196
+    17/79: $5\mosi_first$func$rtl/spi_master.v:199$1085.data[31:0]$1195
+    18/79: $5\mosi_first$func$rtl/spi_master.v:199$1085.$result[0:0]$1194
+    19/79: $4\mosi_first$func$rtl/spi_master.v:199$1085.lsb[0:0]$1192
+    20/79: $4\mosi_first$func$rtl/spi_master.v:199$1085.tot[5:0]$1191
+    21/79: $4\mosi_first$func$rtl/spi_master.v:199$1085.data[31:0]$1190
+    22/79: $4\mosi_first$func$rtl/spi_master.v:199$1085.$result[0:0]$1189
+    23/79: $5\mosi_first$func$rtl/spi_master.v:143$1084.$result[0:0]$1166
+    24/79: $4\mosi_first$func$rtl/spi_master.v:143$1084.$result[0:0]$1162
+    25/79: $4\mosi_first$func$rtl/spi_master.v:143$1084.lsb[0:0]$1165
+    26/79: $4\mosi_first$func$rtl/spi_master.v:143$1084.tot[5:0]$1164
+    27/79: $4\mosi_first$func$rtl/spi_master.v:143$1084.data[31:0]$1163
+    28/79: $3\mosi_first$func$rtl/spi_master.v:143$1084.lsb[0:0]$1152
+    29/79: $3\mosi_first$func$rtl/spi_master.v:143$1084.tot[5:0]$1151
+    30/79: $3\mosi_first$func$rtl/spi_master.v:143$1084.data[31:0]$1150
+    31/79: $3\mosi_first$func$rtl/spi_master.v:143$1084.$result[0:0]$1149
+    32/79: $3\mosi_first$func$rtl/spi_master.v:227$1086.lsb[0:0]$1160
+    33/79: $3\mosi_first$func$rtl/spi_master.v:227$1086.tot[5:0]$1159
+    34/79: $3\mosi_first$func$rtl/spi_master.v:227$1086.data[31:0]$1158
+    35/79: $3\mosi_first$func$rtl/spi_master.v:227$1086.$result[0:0]$1157
+    36/79: $3\mosi_first$func$rtl/spi_master.v:199$1085.lsb[0:0]$1156
+    37/79: $3\mosi_first$func$rtl/spi_master.v:199$1085.tot[5:0]$1155
+    38/79: $3\mosi_first$func$rtl/spi_master.v:199$1085.data[31:0]$1154
+    39/79: $3\mosi_first$func$rtl/spi_master.v:199$1085.$result[0:0]$1153
+    40/79: $2\mosi_first$func$rtl/spi_master.v:227$1086.lsb[0:0]$1148
+    41/79: $2\mosi_first$func$rtl/spi_master.v:227$1086.tot[5:0]$1147
+    42/79: $2\mosi_first$func$rtl/spi_master.v:227$1086.data[31:0]$1146
+    43/79: $2\mosi_first$func$rtl/spi_master.v:227$1086.$result[0:0]$1145
+    44/79: $2\mosi_first$func$rtl/spi_master.v:199$1085.lsb[0:0]$1144
+    45/79: $2\mosi_first$func$rtl/spi_master.v:199$1085.tot[5:0]$1143
+    46/79: $2\mosi_first$func$rtl/spi_master.v:199$1085.data[31:0]$1142
+    47/79: $2\mosi_first$func$rtl/spi_master.v:199$1085.$result[0:0]$1141
+    48/79: $2\mosi_first$func$rtl/spi_master.v:143$1084.lsb[0:0]$1140
+    49/79: $2\mosi_first$func$rtl/spi_master.v:143$1084.tot[5:0]$1139
+    50/79: $2\mosi_first$func$rtl/spi_master.v:143$1084.data[31:0]$1138
+    51/79: $2\mosi_first$func$rtl/spi_master.v:143$1084.$result[0:0]$1137
+    52/79: $1\mosi_first$func$rtl/spi_master.v:227$1086.lsb[0:0]$1136
+    53/79: $1\mosi_first$func$rtl/spi_master.v:227$1086.tot[5:0]$1135
+    54/79: $1\mosi_first$func$rtl/spi_master.v:227$1086.data[31:0]$1134
+    55/79: $1\mosi_first$func$rtl/spi_master.v:227$1086.$result[0:0]$1133
+    56/79: $1\mosi_first$func$rtl/spi_master.v:199$1085.lsb[0:0]$1132
+    57/79: $1\mosi_first$func$rtl/spi_master.v:199$1085.tot[5:0]$1131
+    58/79: $1\mosi_first$func$rtl/spi_master.v:199$1085.data[31:0]$1130
+    59/79: $1\mosi_first$func$rtl/spi_master.v:199$1085.$result[0:0]$1129
+    60/79: $1\mosi_first$func$rtl/spi_master.v:143$1084.lsb[0:0]$1128
+    61/79: $1\mosi_first$func$rtl/spi_master.v:143$1084.tot[5:0]$1127
+    62/79: $1\mosi_first$func$rtl/spi_master.v:143$1084.data[31:0]$1126
+    63/79: $1\mosi_first$func$rtl/spi_master.v:143$1084.$result[0:0]$1125
+    64/79: $0\done[0:0]
+    65/79: $0\sample_half[0:0]
+    66/79: $0\lsb_r[0:0]
+    67/79: $0\cpha_r[0:0]
+    68/79: $0\cpol_r[0:0]
+    69/79: $0\rx_sh[31:0]
+    70/79: $0\tx_sh[31:0]
+    71/79: $0\bits_tot[5:0]
+    72/79: $0\bit_cnt[5:0]
+    73/79: $0\hcnt[15:0]
+    74/79: $0\rx_data[31:0]
+    75/79: $0\aborted[0:0]
+    76/79: $0\st[2:0]
+    77/79: $0\cs_n[0:0]
+    78/79: $0\mosi[0:0]
+    79/79: $0\sclk[0:0]
+Creating decoders for process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+     1/99: $7\first_bit$func$rtl/spi_slave.v:137$859.$result[0:0]$1015
+     2/99: $6\first_bit$func$rtl/spi_slave.v:137$859.$result[0:0]$1011
+     3/99: $6\first_bit$func$rtl/spi_slave.v:137$859.lsb[0:0]$1014
+     4/99: $6\first_bit$func$rtl/spi_slave.v:137$859.tot[5:0]$1013
+     5/99: $6\first_bit$func$rtl/spi_slave.v:137$859.data[31:0]$1012
+     6/99: $7\first_bit$func$rtl/spi_slave.v:218$857.$result[0:0]$1004
+     7/99: $6\first_bit$func$rtl/spi_slave.v:218$857.$result[0:0]$1000
+     8/99: $6\first_bit$func$rtl/spi_slave.v:218$857.lsb[0:0]$1003
+     9/99: $6\first_bit$func$rtl/spi_slave.v:218$857.tot[5:0]$1002
+    10/99: $6\first_bit$func$rtl/spi_slave.v:218$857.data[31:0]$1001
+    11/99: $5\first_bit$func$rtl/spi_slave.v:218$857.lsb[0:0]$993
+    12/99: $5\first_bit$func$rtl/spi_slave.v:218$857.tot[5:0]$992
+    13/99: $5\first_bit$func$rtl/spi_slave.v:218$857.data[31:0]$991
+    14/99: $5\first_bit$func$rtl/spi_slave.v:218$857.$result[0:0]$990
+    15/99: $5\first_bit$func$rtl/spi_slave.v:137$859.lsb[0:0]$997
+    16/99: $5\first_bit$func$rtl/spi_slave.v:137$859.tot[5:0]$996
+    17/99: $5\first_bit$func$rtl/spi_slave.v:137$859.data[31:0]$995
+    18/99: $5\first_bit$func$rtl/spi_slave.v:137$859.$result[0:0]$994
+    19/99: $7\first_bit$func$rtl/spi_slave.v:178$856.$result[0:0]$975
+    20/99: $6\first_bit$func$rtl/spi_slave.v:178$856.$result[0:0]$971
+    21/99: $6\first_bit$func$rtl/spi_slave.v:178$856.lsb[0:0]$974
+    22/99: $6\first_bit$func$rtl/spi_slave.v:178$856.tot[5:0]$973
+    23/99: $6\first_bit$func$rtl/spi_slave.v:178$856.data[31:0]$972
+    24/99: $5\first_bit$func$rtl/spi_slave.v:178$856.lsb[0:0]$969
+    25/99: $5\first_bit$func$rtl/spi_slave.v:178$856.tot[5:0]$968
+    26/99: $5\first_bit$func$rtl/spi_slave.v:178$856.data[31:0]$967
+    27/99: $5\first_bit$func$rtl/spi_slave.v:178$856.$result[0:0]$966
+    28/99: $4\first_bit$func$rtl/spi_slave.v:178$856.lsb[0:0]$956
+    29/99: $4\first_bit$func$rtl/spi_slave.v:178$856.tot[5:0]$955
+    30/99: $4\first_bit$func$rtl/spi_slave.v:178$856.data[31:0]$954
+    31/99: $4\first_bit$func$rtl/spi_slave.v:178$856.$result[0:0]$953
+    32/99: $4\first_bit$func$rtl/spi_slave.v:137$859.lsb[0:0]$964
+    33/99: $4\first_bit$func$rtl/spi_slave.v:137$859.tot[5:0]$963
+    34/99: $4\first_bit$func$rtl/spi_slave.v:137$859.data[31:0]$962
+    35/99: $4\first_bit$func$rtl/spi_slave.v:137$859.$result[0:0]$961
+    36/99: $4\first_bit$func$rtl/spi_slave.v:218$857.lsb[0:0]$960
+    37/99: $4\first_bit$func$rtl/spi_slave.v:218$857.tot[5:0]$959
+    38/99: $4\first_bit$func$rtl/spi_slave.v:218$857.data[31:0]$958
+    39/99: $4\first_bit$func$rtl/spi_slave.v:218$857.$result[0:0]$957
+    40/99: $3\first_bit$func$rtl/spi_slave.v:137$859.lsb[0:0]$950
+    41/99: $3\first_bit$func$rtl/spi_slave.v:137$859.tot[5:0]$949
+    42/99: $3\first_bit$func$rtl/spi_slave.v:137$859.data[31:0]$948
+    43/99: $3\first_bit$func$rtl/spi_slave.v:137$859.$result[0:0]$947
+    44/99: $3\first_bit$func$rtl/spi_slave.v:218$857.lsb[0:0]$946
+    45/99: $3\first_bit$func$rtl/spi_slave.v:218$857.tot[5:0]$945
+    46/99: $3\first_bit$func$rtl/spi_slave.v:218$857.data[31:0]$944
+    47/99: $3\first_bit$func$rtl/spi_slave.v:218$857.$result[0:0]$943
+    48/99: $3\first_bit$func$rtl/spi_slave.v:178$856.lsb[0:0]$942
+    49/99: $3\first_bit$func$rtl/spi_slave.v:178$856.tot[5:0]$941
+    50/99: $3\first_bit$func$rtl/spi_slave.v:178$856.data[31:0]$940
+    51/99: $3\first_bit$func$rtl/spi_slave.v:178$856.$result[0:0]$939
+    52/99: $3\first_bit$func$rtl/spi_slave.v:137$855.$result[0:0]$933
+    53/99: $2\first_bit$func$rtl/spi_slave.v:137$855.$result[0:0]$917
+    54/99: $2\first_bit$func$rtl/spi_slave.v:137$855.lsb[0:0]$920
+    55/99: $2\first_bit$func$rtl/spi_slave.v:137$855.tot[5:0]$919
+    56/99: $2\first_bit$func$rtl/spi_slave.v:137$855.data[31:0]$918
+    57/99: $2\first_bit$func$rtl/spi_slave.v:137$859.lsb[0:0]$932
+    58/99: $2\first_bit$func$rtl/spi_slave.v:137$859.tot[5:0]$931
+    59/99: $2\first_bit$func$rtl/spi_slave.v:137$859.data[31:0]$930
+    60/99: $2\first_bit$func$rtl/spi_slave.v:137$859.$result[0:0]$929
+    61/99: $2\first_bit$func$rtl/spi_slave.v:218$857.lsb[0:0]$928
+    62/99: $2\first_bit$func$rtl/spi_slave.v:218$857.tot[5:0]$927
+    63/99: $2\first_bit$func$rtl/spi_slave.v:218$857.data[31:0]$926
+    64/99: $2\first_bit$func$rtl/spi_slave.v:218$857.$result[0:0]$925
+    65/99: $2\first_bit$func$rtl/spi_slave.v:178$856.lsb[0:0]$924
+    66/99: $2\first_bit$func$rtl/spi_slave.v:178$856.tot[5:0]$923
+    67/99: $2\first_bit$func$rtl/spi_slave.v:178$856.data[31:0]$922
+    68/99: $2\first_bit$func$rtl/spi_slave.v:178$856.$result[0:0]$921
+    69/99: $1\first_bit$func$rtl/spi_slave.v:137$859.lsb[0:0]$916
+    70/99: $1\first_bit$func$rtl/spi_slave.v:137$859.tot[5:0]$915
+    71/99: $1\first_bit$func$rtl/spi_slave.v:137$859.data[31:0]$914
+    72/99: $1\first_bit$func$rtl/spi_slave.v:137$859.$result[0:0]$913
+    73/99: $1\first_bit$func$rtl/spi_slave.v:218$857.lsb[0:0]$912
+    74/99: $1\first_bit$func$rtl/spi_slave.v:218$857.tot[5:0]$911
+    75/99: $1\first_bit$func$rtl/spi_slave.v:218$857.data[31:0]$910
+    76/99: $1\first_bit$func$rtl/spi_slave.v:218$857.$result[0:0]$909
+    77/99: $1\first_bit$func$rtl/spi_slave.v:178$856.lsb[0:0]$908
+    78/99: $1\first_bit$func$rtl/spi_slave.v:178$856.tot[5:0]$907
+    79/99: $1\first_bit$func$rtl/spi_slave.v:178$856.data[31:0]$906
+    80/99: $1\first_bit$func$rtl/spi_slave.v:178$856.$result[0:0]$905
+    81/99: $1\first_bit$func$rtl/spi_slave.v:137$855.lsb[0:0]$904
+    82/99: $1\first_bit$func$rtl/spi_slave.v:137$855.tot[5:0]$903
+    83/99: $1\first_bit$func$rtl/spi_slave.v:137$855.data[31:0]$902
+    84/99: $1\first_bit$func$rtl/spi_slave.v:137$855.$result[0:0]$901
+    85/99: $0\mid_cs_abort[0:0]
+    86/99: $0\rx_valid[0:0]
+    87/99: $0\rx_ready[0:0]
+    88/99: $0\clk_idle[0:0]
+    89/99: $0\word_gap[0:0]
+    90/99: $0\active[0:0]
+    91/99: $0\lsb_r[0:0]
+    92/99: $0\rx_sh[31:0]
+    93/99: $0\tx_sh[31:0]
+    94/99: $0\bits_tot[5:0]
+    95/99: $0\bit_cnt[5:0]
+    96/99: $0\overrun[0:0]
+    97/99: $0\rx_data[31:0]
+    98/99: $0\busy[0:0]
+    99/99: $0\miso[0:0]
+Creating decoders for process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:50$proc$864'.
+     1/8: $0\cs_d[0:0]
+     2/8: $0\sclk_d[0:0]
+     3/8: $0\mosi_s1[0:0]
+     4/8: $0\mosi_s0[0:0]
+     5/8: $0\cs_s1[0:0]
+     6/8: $0\cs_s0[0:0]
+     7/8: $0\sclk_s1[0:0]
+     8/8: $0\sclk_s0[0:0]
+Creating decoders for process `\spi_icebreaker.$fpga/spi_icebreaker.v:51$proc$4'.
+     1/7: $0\start[0:0]
+     2/7: $0\st[1:0]
+     3/7: $0\started[0:0]
+     4/7: $0\fail[0:0]
+     5/7: $0\pass[0:0]
+     6/7: $0\idx[1:0]
+     7/7: $0\enable[0:0]
+Creating decoders for process `\spi_icebreaker.$fpga/spi_icebreaker.v:42$proc$3'.
+     1/2: $1\s_tx[31:0]
+     2/2: $1\m_tx[31:0]
+Creating decoders for process `\spi_icebreaker.$fpga/spi_icebreaker.v:27$proc$1'.
+     1/1: $0\rst_s[2:0]
+
+6.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\spi_icebreaker.\m_tx' from process `\spi_icebreaker.$fpga/spi_icebreaker.v:42$proc$3'.
+No latch inferred for signal `\spi_icebreaker.\s_tx' from process `\spi_icebreaker.$fpga/spi_icebreaker.v:42$proc$3'.
+
+6.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\sclk' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3161' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\mosi' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3166' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\cs_n' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3171' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\done' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3176' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\st' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3181' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\aborted' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3186' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\rx_data' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3191' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\hcnt' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3196' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\bit_cnt' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3201' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\bits_tot' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3206' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\tx_sh' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3211' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\rx_sh' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3216' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\cpol_r' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3221' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\cpha_r' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3226' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\lsb_r' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3231' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\sample_half' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3236' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\mosi_first$func$rtl/spi_master.v:143$1084.$result' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3241' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\mosi_first$func$rtl/spi_master.v:143$1084.data' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3246' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\mosi_first$func$rtl/spi_master.v:143$1084.tot' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3251' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\mosi_first$func$rtl/spi_master.v:143$1084.lsb' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3256' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\mosi_first$func$rtl/spi_master.v:199$1085.$result' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3261' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\mosi_first$func$rtl/spi_master.v:199$1085.data' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3266' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\mosi_first$func$rtl/spi_master.v:199$1085.tot' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3271' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\mosi_first$func$rtl/spi_master.v:199$1085.lsb' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3276' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\mosi_first$func$rtl/spi_master.v:227$1086.$result' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3281' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\mosi_first$func$rtl/spi_master.v:227$1086.data' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3286' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\mosi_first$func$rtl/spi_master.v:227$1086.tot' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3291' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.\mosi_first$func$rtl/spi_master.v:227$1086.lsb' using process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+  created $adff cell `$procdff$3296' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\miso' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3301' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\busy' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3306' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\rx_data' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3311' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\rx_valid' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3316' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\overrun' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3321' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\mid_cs_abort' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3326' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\bit_cnt' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3331' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\bits_tot' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3336' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\tx_sh' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3341' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\rx_sh' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3346' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\lsb_r' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3351' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\active' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3356' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\word_gap' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3361' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\clk_idle' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3366' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\rx_ready' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3371' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\first_bit$func$rtl/spi_slave.v:137$855.$result' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3376' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\first_bit$func$rtl/spi_slave.v:137$855.data' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3381' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\first_bit$func$rtl/spi_slave.v:137$855.tot' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3386' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\first_bit$func$rtl/spi_slave.v:137$855.lsb' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3391' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\first_bit$func$rtl/spi_slave.v:178$856.$result' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3396' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\first_bit$func$rtl/spi_slave.v:178$856.data' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3401' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\first_bit$func$rtl/spi_slave.v:178$856.tot' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3406' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\first_bit$func$rtl/spi_slave.v:178$856.lsb' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3411' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\first_bit$func$rtl/spi_slave.v:218$857.$result' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3416' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\first_bit$func$rtl/spi_slave.v:218$857.data' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3421' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\first_bit$func$rtl/spi_slave.v:218$857.tot' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3426' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\first_bit$func$rtl/spi_slave.v:218$857.lsb' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3431' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\first_bit$func$rtl/spi_slave.v:137$859.$result' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3436' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\first_bit$func$rtl/spi_slave.v:137$859.data' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3441' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\first_bit$func$rtl/spi_slave.v:137$859.tot' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3446' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\first_bit$func$rtl/spi_slave.v:137$859.lsb' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+  created $adff cell `$procdff$3451' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\sclk_s0' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:50$proc$864'.
+  created $adff cell `$procdff$3456' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\sclk_s1' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:50$proc$864'.
+  created $adff cell `$procdff$3461' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\cs_s0' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:50$proc$864'.
+  created $adff cell `$procdff$3466' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\cs_s1' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:50$proc$864'.
+  created $adff cell `$procdff$3471' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\mosi_s0' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:50$proc$864'.
+  created $adff cell `$procdff$3476' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\mosi_s1' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:50$proc$864'.
+  created $adff cell `$procdff$3481' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\sclk_d' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:50$proc$864'.
+  created $adff cell `$procdff$3486' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.\cs_d' using process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:50$proc$864'.
+  created $adff cell `$procdff$3491' with positive edge clock and positive level reset.
+Creating register for signal `\spi_icebreaker.\enable' using process `\spi_icebreaker.$fpga/spi_icebreaker.v:51$proc$4'.
+  created $adff cell `$procdff$3496' with positive edge clock and positive level reset.
+Creating register for signal `\spi_icebreaker.\start' using process `\spi_icebreaker.$fpga/spi_icebreaker.v:51$proc$4'.
+  created $adff cell `$procdff$3501' with positive edge clock and positive level reset.
+Creating register for signal `\spi_icebreaker.\idx' using process `\spi_icebreaker.$fpga/spi_icebreaker.v:51$proc$4'.
+  created $adff cell `$procdff$3506' with positive edge clock and positive level reset.
+Creating register for signal `\spi_icebreaker.\pass' using process `\spi_icebreaker.$fpga/spi_icebreaker.v:51$proc$4'.
+  created $adff cell `$procdff$3511' with positive edge clock and positive level reset.
+Creating register for signal `\spi_icebreaker.\fail' using process `\spi_icebreaker.$fpga/spi_icebreaker.v:51$proc$4'.
+  created $adff cell `$procdff$3516' with positive edge clock and positive level reset.
+Creating register for signal `\spi_icebreaker.\started' using process `\spi_icebreaker.$fpga/spi_icebreaker.v:51$proc$4'.
+  created $adff cell `$procdff$3521' with positive edge clock and positive level reset.
+Creating register for signal `\spi_icebreaker.\st' using process `\spi_icebreaker.$fpga/spi_icebreaker.v:51$proc$4'.
+  created $adff cell `$procdff$3526' with positive edge clock and positive level reset.
+Creating register for signal `\spi_icebreaker.\rst_s' using process `\spi_icebreaker.$fpga/spi_icebreaker.v:27$proc$1'.
+  created $adff cell `$procdff$3531' with positive edge clock and positive level reset.
+
+6.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+6.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 17 empty switches in `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+Removing empty process `$paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.$rtl/spi_master.v:95$proc$1111'.
+Found and cleaned up 20 empty switches in `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+Removing empty process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:141$proc$883'.
+Removing empty process `$paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.$rtl/spi_slave.v:50$proc$864'.
+Found and cleaned up 6 empty switches in `\spi_icebreaker.$fpga/spi_icebreaker.v:51$proc$4'.
+Removing empty process `spi_icebreaker.$fpga/spi_icebreaker.v:51$proc$4'.
+Found and cleaned up 1 empty switch in `\spi_icebreaker.$fpga/spi_icebreaker.v:42$proc$3'.
+Removing empty process `spi_icebreaker.$fpga/spi_icebreaker.v:42$proc$3'.
+Removing empty process `spi_icebreaker.$fpga/spi_icebreaker.v:27$proc$1'.
+Cleaned up 44 empty switches.
+
+6.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.
+<suppressed ~84 debug messages>
+Optimizing module $paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.
+<suppressed ~87 debug messages>
+Optimizing module $paramod\spi_loopback\MAX_WIDTH=s32'00000000000000000000000000100000.
+Optimizing module spi_icebreaker.
+<suppressed ~23 debug messages>
+
+6.4. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000...
+Checking module $paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave...
+Checking module $paramod\spi_loopback\MAX_WIDTH=s32'00000000000000000000000000100000...
+Checking module spi_icebreaker...
+Found and reported 0 problems.
+
+6.5. Executing FLATTEN pass (flatten design).
+Deleting now unused module $paramod\spi_master\MAX_WIDTH=s32'00000000000000000000000000100000.
+Deleting now unused module $paramod$71503bee3fe4d46c1215b9fbc8408a5fa3867c7c\spi_slave.
+Deleting now unused module $paramod\spi_loopback\MAX_WIDTH=s32'00000000000000000000000000100000.
+<suppressed ~3 debug messages>
+
+6.6. Executing TRIBUF pass.
+
+6.7. Executing DEMINOUT pass (demote inout ports to input or output).
+
+6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+<suppressed ~125 debug messages>
+
+6.9. Executing CHECK pass (checking for obvious problems).
+Checking module spi_icebreaker...
+Found and reported 0 problems.
+
+6.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+Removed 479 unused cells and 1500 unused wires.
+<suppressed ~522 debug messages>
+
+6.11. Executing OPT pass (performing simple optimizations).
+
+6.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+
+6.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 486 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Computing hashes of 423 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+<suppressed ~189 debug messages>
+Removed a total of 63 cells.
+
+6.11.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_icebreaker..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port B of cell $flatten\u_lp.\u_m.$procmux$1822: \u_lp.u_m.sample_half -> 1'1
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $flatten\u_lp.\u_s.$procmux$2759.
+    dead port 2/2 on $mux $flatten\u_lp.\u_m.$procmux$1594.
+    dead port 2/2 on $mux $flatten\u_lp.\u_m.$procmux$1596.
+    dead port 1/2 on $mux $flatten\u_lp.\u_m.$procmux$1599.
+    dead port 1/2 on $mux $flatten\u_lp.\u_s.$procmux$2465.
+    dead port 1/2 on $mux $flatten\u_lp.\u_s.$procmux$2462.
+    dead port 2/2 on $mux $flatten\u_lp.\u_s.$procmux$2459.
+    dead port 2/2 on $mux $flatten\u_lp.\u_s.$procmux$2457.
+    dead port 1/2 on $mux $flatten\u_lp.\u_s.$procmux$2291.
+    dead port 1/2 on $mux $flatten\u_lp.\u_s.$procmux$2288.
+    dead port 1/2 on $mux $flatten\u_lp.\u_s.$procmux$2285.
+    dead port 2/2 on $mux $flatten\u_lp.\u_s.$procmux$2282.
+    dead port 2/2 on $mux $flatten\u_lp.\u_s.$procmux$2280.
+    dead port 1/2 on $mux $flatten\u_lp.\u_s.$procmux$2213.
+    dead port 1/2 on $mux $flatten\u_lp.\u_s.$procmux$2210.
+    dead port 1/2 on $mux $flatten\u_lp.\u_s.$procmux$2207.
+    dead port 1/2 on $mux $flatten\u_lp.\u_s.$procmux$2204.
+    dead port 2/2 on $mux $flatten\u_lp.\u_s.$procmux$2201.
+Removed 18 multiplexer ports.
+<suppressed ~488 debug messages>
+
+6.11.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_icebreaker.
+    New ctrl vector for $pmux cell $flatten\u_lp.\u_m.$procmux$2115: { $auto$opt_reduce.cc:137:opt_pmux$3536 $flatten\u_lp.\u_m.$procmux$2133_CMP $flatten\u_lp.\u_m.$procmux$2143_CMP $flatten\u_lp.\u_m.$procmux$2149_CMP $flatten\u_lp.\u_m.$procmux$2193_CMP }
+    New ctrl vector for $pmux cell $flatten\u_lp.\u_m.$procmux$1999: { $flatten\u_lp.\u_m.$procmux$2133_CMP $flatten\u_lp.\u_m.$procmux$2143_CMP $flatten\u_lp.\u_m.$procmux$2149_CMP $flatten\u_lp.\u_m.$procmux$2193_CMP }
+    New ctrl vector for $pmux cell $flatten\u_lp.\u_m.$procmux$2158: { $auto$opt_reduce.cc:137:opt_pmux$3538 $flatten\u_lp.\u_m.$procmux$2133_CMP $flatten\u_lp.\u_m.$procmux$2143_CMP $flatten\u_lp.\u_m.$procmux$2149_CMP $flatten\u_lp.\u_m.$procmux$2193_CMP }
+    New ctrl vector for $pmux cell $flatten\u_lp.\u_m.$procmux$1887: { $flatten\u_lp.\u_m.$procmux$2143_CMP $flatten\u_lp.\u_m.$procmux$2193_CMP }
+    New ctrl vector for $pmux cell $flatten\u_lp.\u_m.$procmux$2094: { $auto$opt_reduce.cc:137:opt_pmux$3540 $flatten\u_lp.\u_m.$procmux$2133_CMP $flatten\u_lp.\u_m.$procmux$2193_CMP }
+    New ctrl vector for $pmux cell $flatten\u_lp.\u_m.$procmux$1921: $flatten\u_lp.\u_m.$procmux$2193_CMP
+    New ctrl vector for $pmux cell $flatten\u_lp.\u_m.$procmux$1962: { $flatten\u_lp.\u_m.$procmux$2143_CMP $flatten\u_lp.\u_m.$procmux$2193_CMP }
+    New ctrl vector for $pmux cell $flatten\u_lp.\u_m.$procmux$2060: { $flatten\u_lp.\u_m.$procmux$2133_CMP $flatten\u_lp.\u_m.$procmux$2143_CMP $flatten\u_lp.\u_m.$procmux$2149_CMP $flatten\u_lp.\u_m.$procmux$2193_CMP }
+  Optimizing cells in module \spi_icebreaker.
+Performed a total of 8 changes.
+
+6.11.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 408 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Computing hashes of 403 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+<suppressed ~15 debug messages>
+Removed a total of 5 cells.
+
+6.11.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.11.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+Removed 0 unused cells and 86 unused wires.
+<suppressed ~1 debug messages>
+
+6.11.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+
+6.11.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.11.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_icebreaker..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~474 debug messages>
+
+6.11.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_icebreaker.
+    New ctrl vector for $pmux cell $flatten\u_lp.\u_m.$procmux$1999: { $flatten\u_lp.\u_m.$procmux$1597_CMP $auto$opt_reduce.cc:137:opt_pmux$3542 }
+  Optimizing cells in module \spi_icebreaker.
+Performed a total of 1 changes.
+
+6.11.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 404 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Removed a total of 0 cells.
+
+6.11.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.11.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+
+6.11.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+
+6.11.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.11.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_icebreaker..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~470 debug messages>
+
+6.11.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_icebreaker.
+Performed a total of 0 changes.
+
+6.11.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 404 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Removed a total of 0 cells.
+
+6.11.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.11.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+
+6.11.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+
+6.11.23. Finished fast OPT passes. (There is nothing left to do.)
+
+6.12. Executing FSM pass (extract and optimize FSM).
+
+6.12.1. Executing FSM_DETECT pass (finding FSMs in design).
+Not marking spi_icebreaker.u_lp.u_m.bits_tot as FSM state register:
+    Users of register don't seem to benefit from recoding.
+Found FSM state register spi_icebreaker.u_lp.u_m.st.
+Not marking spi_icebreaker.u_lp.u_s.tx_sh as FSM state register:
+    Users of register don't seem to benefit from recoding.
+Not marking spi_icebreaker.u_lp.u_s.bits_tot as FSM state register:
+    Users of register don't seem to benefit from recoding.
+Not marking spi_icebreaker.u_lp.u_m.tx_sh as FSM state register:
+    Users of register don't seem to benefit from recoding.
+Found FSM state register spi_icebreaker.st.
+
+6.12.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+Extracting FSM `\u_lp.u_m.st' from module `\spi_icebreaker'.
+  found $adff cell for state register: $flatten\u_lp.\u_m.$procdff$3181
+  root of input selection tree: $flatten\u_lp.\u_m.$0\st[2:0]
+  found reset state: 3'000 (from async reset)
+  found ctrl input: \u_lp.u_m.do_abort
+  found ctrl input: $flatten\u_lp.\u_m.$procmux$1597_CMP
+  found ctrl input: $flatten\u_lp.\u_m.$procmux$1833_CMP
+  found ctrl input: $flatten\u_lp.\u_m.$procmux$1811_CMP
+  found ctrl input: $flatten\u_lp.\u_m.$procmux$1898_CMP
+  found ctrl input: $flatten\u_lp.\u_m.$procmux$1595_CMP
+  found state code: 3'001
+  found ctrl input: $flatten\u_lp.\u_m.$procmux$1410_CMP
+  found state code: 3'010
+  found ctrl input: \u_lp.u_m.sample_half
+  found ctrl input: $flatten\u_lp.\u_m.$procmux$1805_CMP
+  found state code: 3'011
+  found state code: 3'101
+  found ctrl output: $flatten\u_lp.\u_m.$procmux$2095_CMP
+  found ctrl output: $flatten\u_lp.\u_m.$procmux$1888_CMP
+  found ctrl output: $flatten\u_lp.\u_m.$procmux$1898_CMP
+  found ctrl output: $flatten\u_lp.\u_m.$procmux$1811_CMP
+  found ctrl output: $flatten\u_lp.\u_m.$procmux$1833_CMP
+  found ctrl output: $flatten\u_lp.\u_m.$procmux$1597_CMP
+  ctrl inputs: { $flatten\u_lp.\u_m.$procmux$1805_CMP $flatten\u_lp.\u_m.$procmux$1595_CMP $flatten\u_lp.\u_m.$procmux$1410_CMP \u_lp.u_m.do_abort \u_lp.u_m.sample_half }
+  ctrl outputs: { $flatten\u_lp.\u_m.$procmux$2095_CMP $flatten\u_lp.\u_m.$procmux$1898_CMP $flatten\u_lp.\u_m.$procmux$1888_CMP $flatten\u_lp.\u_m.$procmux$1833_CMP $flatten\u_lp.\u_m.$procmux$1811_CMP $flatten\u_lp.\u_m.$procmux$1597_CMP $flatten\u_lp.\u_m.$0\st[2:0] }
+  transition:      3'000 5'-0-0- ->      3'000 9'000001000
+  transition:      3'000 5'-1-0- ->      3'001 9'000001001
+  transition:      3'000 5'---1- ->      3'101 9'000001101
+  transition:      3'010 5'--00- ->      3'010 9'000010010
+  transition:      3'010 5'--100 ->      3'010 9'000010010
+  transition:      3'010 5'0-101 ->      3'010 9'000010010
+  transition:      3'010 5'1-101 ->      3'011 9'000010011
+  transition:      3'010 5'---1- ->      3'101 9'000010101
+  transition:      3'001 5'--00- ->      3'001 9'000100001
+  transition:      3'001 5'--10- ->      3'010 9'000100010
+  transition:      3'001 5'---1- ->      3'101 9'000100101
+  transition:      3'101 5'---0- ->      3'000 9'100000000
+  transition:      3'101 5'---1- ->      3'101 9'100000101
+  transition:      3'011 5'--00- ->      3'011 9'010000011
+  transition:      3'011 5'--10- ->      3'000 9'010000000
+  transition:      3'011 5'---1- ->      3'101 9'010000101
+Extracting FSM `\st' from module `\spi_icebreaker'.
+  found $adff cell for state register: $procdff$3526
+  root of input selection tree: $0\st[1:0]
+  found reset state: 2'00 (from async reset)
+  found ctrl input: $procmux$3098_CMP
+  found ctrl input: $procmux$3104_CMP
+  found ctrl input: $procmux$3095_CMP
+  found state code: 2'11
+  found ctrl input: \u_lp.u_m.done
+  found ctrl input: $fpga/spi_icebreaker.v:75$eq$11_Y
+  found ctrl input: $fpga/spi_icebreaker.v:65$logic_and$7_Y
+  found state code: 2'10
+  found ctrl output: $procmux$3098_CMP
+  found ctrl output: $procmux$3104_CMP
+  found ctrl output: $procmux$3095_CMP
+  ctrl inputs: { \u_lp.u_m.done $fpga/spi_icebreaker.v:75$eq$11_Y $fpga/spi_icebreaker.v:65$logic_and$7_Y }
+  ctrl outputs: { $procmux$3104_CMP $procmux$3098_CMP $procmux$3095_CMP $0\st[1:0] }
+  transition:       2'00 3'--0 ->       2'00 5'00100
+  transition:       2'00 3'--1 ->       2'10 5'00110
+  transition:       2'10 3'0-- ->       2'10 5'10010
+  transition:       2'10 3'10- ->       2'00 5'10000
+  transition:       2'10 3'11- ->       2'11 5'10011
+  transition:       2'11 3'--- ->       2'11 5'01011
+
+6.12.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\st$3551' from module `\spi_icebreaker'.
+Optimizing FSM `$fsm$\u_lp.u_m.st$3543' from module `\spi_icebreaker'.
+
+6.12.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+Removed 23 unused cells and 23 unused wires.
+<suppressed ~24 debug messages>
+
+6.12.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\u_lp.u_m.st$3543' from module `\spi_icebreaker'.
+  Removing unused output signal $flatten\u_lp.\u_m.$0\st[2:0] [0].
+  Removing unused output signal $flatten\u_lp.\u_m.$0\st[2:0] [1].
+  Removing unused output signal $flatten\u_lp.\u_m.$0\st[2:0] [2].
+Optimizing FSM `$fsm$\st$3551' from module `\spi_icebreaker'.
+  Removing unused output signal $0\st[1:0] [0].
+  Removing unused output signal $0\st[1:0] [1].
+
+6.12.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+Recoding FSM `$fsm$\u_lp.u_m.st$3543' from module `\spi_icebreaker' using `auto' encoding:
+  mapping auto encoding to `one-hot` for this FSM.
+  000 -> ----1
+  010 -> ---1-
+  001 -> --1--
+  101 -> -1---
+  011 -> 1----
+Recoding FSM `$fsm$\st$3551' from module `\spi_icebreaker' using `auto' encoding:
+  mapping auto encoding to `one-hot` for this FSM.
+  00 -> --1
+  10 -> -1-
+  11 -> 1--
+
+6.12.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+FSM `$fsm$\u_lp.u_m.st$3543' from module `spi_icebreaker':
+-------------------------------------
+
+  Information on FSM $fsm$\u_lp.u_m.st$3543 (\u_lp.u_m.st):
+
+  Number of input signals:    5
+  Number of output signals:   6
+  Number of state bits:       5
+
+  Input signals:
+    0: \u_lp.u_m.sample_half
+    1: \u_lp.u_m.do_abort
+    2: $flatten\u_lp.\u_m.$procmux$1410_CMP
+    3: $flatten\u_lp.\u_m.$procmux$1595_CMP
+    4: $flatten\u_lp.\u_m.$procmux$1805_CMP
+
+  Output signals:
+    0: $flatten\u_lp.\u_m.$procmux$1597_CMP
+    1: $flatten\u_lp.\u_m.$procmux$1811_CMP
+    2: $flatten\u_lp.\u_m.$procmux$1833_CMP
+    3: $flatten\u_lp.\u_m.$procmux$1888_CMP
+    4: $flatten\u_lp.\u_m.$procmux$1898_CMP
+    5: $flatten\u_lp.\u_m.$procmux$2095_CMP
+
+  State encoding:
+    0:    5'----1  <RESET STATE>
+    1:    5'---1-
+    2:    5'--1--
+    3:    5'-1---
+    4:    5'1----
+
+  Transition Table (state_in, ctrl_in, state_out, ctrl_out):
+      0:     0 5'-0-0-   ->     0 6'000001
+      1:     0 5'-1-0-   ->     2 6'000001
+      2:     0 5'---1-   ->     3 6'000001
+      3:     1 5'--100   ->     1 6'000010
+      4:     1 5'0-101   ->     1 6'000010
+      5:     1 5'--00-   ->     1 6'000010
+      6:     1 5'---1-   ->     3 6'000010
+      7:     1 5'1-101   ->     4 6'000010
+      8:     2 5'--10-   ->     1 6'000100
+      9:     2 5'--00-   ->     2 6'000100
+     10:     2 5'---1-   ->     3 6'000100
+     11:     3 5'---0-   ->     0 6'100000
+     12:     3 5'---1-   ->     3 6'100000
+     13:     4 5'--10-   ->     0 6'010000
+     14:     4 5'---1-   ->     3 6'010000
+     15:     4 5'--00-   ->     4 6'010000
+
+-------------------------------------
+
+FSM `$fsm$\st$3551' from module `spi_icebreaker':
+-------------------------------------
+
+  Information on FSM $fsm$\st$3551 (\st):
+
+  Number of input signals:    3
+  Number of output signals:   3
+  Number of state bits:       3
+
+  Input signals:
+    0: $fpga/spi_icebreaker.v:65$logic_and$7_Y
+    1: $fpga/spi_icebreaker.v:75$eq$11_Y
+    2: \u_lp.u_m.done
+
+  Output signals:
+    0: $procmux$3095_CMP
+    1: $procmux$3098_CMP
+    2: $procmux$3104_CMP
+
+  State encoding:
+    0:      3'--1  <RESET STATE>
+    1:      3'-1-
+    2:      3'1--
+
+  Transition Table (state_in, ctrl_in, state_out, ctrl_out):
+      0:     0 3'--0   ->     0 3'001
+      1:     0 3'--1   ->     1 3'001
+      2:     1 3'10-   ->     0 3'100
+      3:     1 3'0--   ->     1 3'100
+      4:     1 3'11-   ->     2 3'100
+      5:     2 3'---   ->     2 3'010
+
+-------------------------------------
+
+6.12.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+Mapping FSM `$fsm$\u_lp.u_m.st$3543' from module `\spi_icebreaker'.
+Mapping FSM `$fsm$\st$3551' from module `\spi_icebreaker'.
+
+6.13. Executing OPT pass (performing simple optimizations).
+
+6.13.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+<suppressed ~11 debug messages>
+
+6.13.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 419 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Computing hashes of 416 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+6.13.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_icebreaker..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~456 debug messages>
+
+6.13.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_icebreaker.
+Performed a total of 0 changes.
+
+6.13.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 416 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Removed a total of 0 cells.
+
+6.13.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $flatten\u_lp.\u_s.$procdff$3366 ($adff) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\clk_idle[0:0], Q = \u_lp.u_s.clk_idle).
+Adding EN signal on $flatten\u_lp.\u_m.$procdff$3221 ($adff) from module spi_icebreaker (D = 1'0, Q = \u_lp.u_m.cpol_r).
+Adding EN signal on $procdff$3496 ($adff) from module spi_icebreaker (D = 1'1, Q = \enable).
+Adding EN signal on $procdff$3506 ($adff) from module spi_icebreaker (D = $fpga/spi_icebreaker.v:78$add$12_Y, Q = \idx).
+Adding EN signal on $procdff$3511 ($adff) from module spi_icebreaker (D = 1'1, Q = \pass).
+Adding EN signal on $procdff$3521 ($adff) from module spi_icebreaker (D = $0\started[0:0], Q = \started).
+Adding EN signal on $procdff$3516 ($adff) from module spi_icebreaker (D = 1'1, Q = \fail).
+Adding EN signal on $flatten\u_lp.\u_s.$procdff$3331 ($adff) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\bit_cnt[5:0], Q = \u_lp.u_s.bit_cnt).
+Adding EN signal on $flatten\u_lp.\u_s.$procdff$3356 ($adff) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\active[0:0], Q = \u_lp.u_s.active).
+Adding EN signal on $flatten\u_lp.\u_m.$procdff$3191 ($adff) from module spi_icebreaker (D = \u_lp.u_m.rx_next, Q = \u_lp.u_m.rx_data).
+Adding EN signal on $flatten\u_lp.\u_s.$procdff$3301 ($adff) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\miso[0:0], Q = \u_lp.u_s.miso).
+Adding EN signal on $flatten\u_lp.\u_m.$procdff$3236 ($adff) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1828_Y, Q = \u_lp.u_m.sample_half).
+Adding EN signal on $flatten\u_lp.\u_m.$procdff$3231 ($adff) from module spi_icebreaker (D = 1'0, Q = \u_lp.u_m.lsb_r).
+Adding EN signal on $flatten\u_lp.\u_m.$procdff$3226 ($adff) from module spi_icebreaker (D = 1'0, Q = \u_lp.u_m.cpha_r).
+Adding EN signal on $flatten\u_lp.\u_s.$procdff$3311 ($adff) from module spi_icebreaker (D = \u_lp.u_s.rx_next, Q = \u_lp.u_s.rx_data).
+Adding EN signal on $flatten\u_lp.\u_s.$procdff$3336 ($adff) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\bits_tot[5:0], Q = \u_lp.u_s.bits_tot).
+Adding EN signal on $flatten\u_lp.\u_s.$procdff$3361 ($adff) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\word_gap[0:0], Q = \u_lp.u_s.word_gap).
+Adding EN signal on $flatten\u_lp.\u_s.$procdff$3346 ($adff) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\rx_sh[31:0], Q = \u_lp.u_s.rx_sh).
+Adding EN signal on $flatten\u_lp.\u_s.$procdff$3341 ($adff) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\tx_sh[31:0], Q = \u_lp.u_s.tx_sh).
+Adding EN signal on $flatten\u_lp.\u_m.$procdff$3171 ($adff) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$0\cs_n[0:0], Q = \u_lp.u_m.cs_n).
+Adding EN signal on $flatten\u_lp.\u_m.$procdff$3206 ($adff) from module spi_icebreaker (D = 6'001000, Q = \u_lp.u_m.bits_tot).
+Adding EN signal on $flatten\u_lp.\u_s.$procdff$3351 ($adff) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\lsb_r[0:0], Q = \u_lp.u_s.lsb_r).
+Adding EN signal on $flatten\u_lp.\u_m.$procdff$3166 ($adff) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$0\mosi[0:0], Q = \u_lp.u_m.mosi).
+Adding EN signal on $flatten\u_lp.\u_m.$procdff$3216 ($adff) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1887_Y, Q = \u_lp.u_m.rx_sh).
+Adding EN signal on $flatten\u_lp.\u_m.$procdff$3211 ($adff) from module spi_icebreaker (D = { \u_lp.u_m.tx_data [31:8] \m_tx [7:0] }, Q = \u_lp.u_m.tx_sh).
+Adding EN signal on $flatten\u_lp.\u_m.$procdff$3161 ($adff) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$0\sclk[0:0], Q = \u_lp.u_m.sclk).
+Adding EN signal on $flatten\u_lp.\u_m.$procdff$3201 ($adff) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1962_Y, Q = \u_lp.u_m.bit_cnt).
+Adding EN signal on $flatten\u_lp.\u_m.$procdff$3196 ($adff) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$0\hcnt[15:0], Q = \u_lp.u_m.hcnt).
+Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$3789 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 1 on $auto$ff.cc:337:slice$3789 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 2 on $auto$ff.cc:337:slice$3789 ($adffe) from module spi_icebreaker.
+Setting constant 1-bit at position 3 on $auto$ff.cc:337:slice$3789 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 4 on $auto$ff.cc:337:slice$3789 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 5 on $auto$ff.cc:337:slice$3789 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$3728 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$3723 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$3644 ($adffe) from module spi_icebreaker.
+
+6.13.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+Removed 45 unused cells and 67 unused wires.
+<suppressed ~46 debug messages>
+
+6.13.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+<suppressed ~28 debug messages>
+
+6.13.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.13.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_icebreaker..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~271 debug messages>
+
+6.13.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_icebreaker.
+    New input vector for $reduce_and cell $auto$simple.cc:231:make_patterns_logic$3852: { $auto$simple.cc:213:make_patterns_logic$3849 $auto$simple.cc:213:make_patterns_logic$3847 $auto$simple.cc:213:make_patterns_logic$3845 $auto$simple.cc:213:make_patterns_logic$3841 }
+    New ctrl vector for $pmux cell $flatten\u_lp.\u_m.$procmux$2115: { \u_lp.u_m.st [0] \u_lp.u_m.st [1] \u_lp.u_m.st [4:3] }
+    New ctrl vector for $pmux cell $flatten\u_lp.\u_m.$procmux$2158: { $auto$opt_reduce.cc:137:opt_pmux$3880 \u_lp.u_m.st [2:1] \u_lp.u_m.st [4] }
+  Optimizing cells in module \spi_icebreaker.
+Performed a total of 3 changes.
+
+6.13.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 462 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Computing hashes of 423 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Computing hashes of 419 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+<suppressed ~129 debug messages>
+Removed a total of 43 cells.
+
+6.13.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.13.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+Removed 1 unused cells and 55 unused wires.
+<suppressed ~2 debug messages>
+
+6.13.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+
+6.13.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.13.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_icebreaker..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~282 debug messages>
+
+6.13.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_icebreaker.
+    New ctrl vector for $pmux cell $flatten\u_lp.\u_m.$procmux$2158: { \u_lp.u_m.st [4] $auto$opt_reduce.cc:137:opt_pmux$3882 $auto$opt_reduce.cc:137:opt_pmux$3880 }
+  Optimizing cells in module \spi_icebreaker.
+Performed a total of 1 changes.
+
+6.13.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 419 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Removed a total of 0 cells.
+
+6.13.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.13.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+
+6.13.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+
+6.13.23. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.13.24. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_icebreaker..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~279 debug messages>
+
+6.13.25. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_icebreaker.
+Performed a total of 0 changes.
+
+6.13.26. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 419 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Removed a total of 0 cells.
+
+6.13.27. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.13.28. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+
+6.13.29. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+
+6.13.30. Finished fast OPT passes. (There is nothing left to do.)
+
+6.14. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 2) from port B of cell spi_icebreaker.$fpga/spi_icebreaker.v:78$add$12 ($add).
+Removed top 1 bits (of 4) from port B of cell spi_icebreaker.$auto$fsm_map.cc:77:implement_pattern_cache$3578 ($eq).
+Removed top 1 bits (of 2) from port B of cell spi_icebreaker.$auto$simple.cc:214:make_patterns_logic$3664 ($ne).
+Removed top 1 bits (of 2) from port B of cell spi_icebreaker.$auto$simple.cc:214:make_patterns_logic$3668 ($ne).
+Removed top 1 bits (of 3) from port B of cell spi_icebreaker.$auto$simple.cc:214:make_patterns_logic$3680 ($ne).
+Removed top 1 bits (of 4) from port B of cell spi_icebreaker.$auto$simple.cc:214:make_patterns_logic$3687 ($ne).
+Removed top 1 bits (of 4) from port B of cell spi_icebreaker.$auto$simple.cc:214:make_patterns_logic$3689 ($ne).
+Removed top 2 bits (of 4) from port B of cell spi_icebreaker.$auto$simple.cc:214:make_patterns_logic$3693 ($ne).
+Removed top 2 bits (of 4) from port B of cell spi_icebreaker.$auto$simple.cc:214:make_patterns_logic$3695 ($ne).
+Removed top 24 bits (of 32) from FF cell spi_icebreaker.$auto$ff.cc:337:slice$3698 ($adffe).
+Removed top 2 bits (of 5) from port B of cell spi_icebreaker.$auto$simple.cc:214:make_patterns_logic$3705 ($ne).
+Removed top 3 bits (of 5) from port B of cell spi_icebreaker.$auto$simple.cc:214:make_patterns_logic$3709 ($ne).
+Removed top 1 bits (of 2) from port B of cell spi_icebreaker.$auto$simple.cc:214:make_patterns_logic$3718 ($ne).
+Removed top 24 bits (of 32) from FF cell spi_icebreaker.$auto$ff.cc:337:slice$3733 ($adffe).
+Removed top 1 bits (of 3) from port B of cell spi_icebreaker.$auto$simple.cc:214:make_patterns_logic$3800 ($ne).
+Removed top 2 bits (of 3) from port B of cell spi_icebreaker.$auto$simple.cc:214:make_patterns_logic$3809 ($ne).
+Removed top 2 bits (of 3) from port B of cell spi_icebreaker.$auto$simple.cc:214:make_patterns_logic$3811 ($ne).
+Removed top 1 bits (of 2) from port B of cell spi_icebreaker.$auto$simple.cc:214:make_patterns_logic$3815 ($ne).
+Removed top 2 bits (of 3) from port B of cell spi_icebreaker.$auto$simple.cc:214:make_patterns_logic$3817 ($ne).
+Removed top 2 bits (of 3) from port B of cell spi_icebreaker.$auto$simple.cc:214:make_patterns_logic$3819 ($ne).
+Removed top 1 bits (of 2) from port B of cell spi_icebreaker.$auto$simple.cc:214:make_patterns_logic$3857 ($ne).
+Removed top 1 bits (of 2) from port B of cell spi_icebreaker.$auto$simple.cc:214:make_patterns_logic$3859 ($ne).
+Removed top 1 bits (of 2) from port B of cell spi_icebreaker.$auto$simple.cc:214:make_patterns_logic$3861 ($ne).
+Removed top 2 bits (of 3) from port B of cell spi_icebreaker.$auto$simple.cc:214:make_patterns_logic$3872 ($ne).
+Removed top 24 bits (of 32) from mux cell spi_icebreaker.$procmux$3148 ($pmux).
+Removed top 24 bits (of 32) from mux cell spi_icebreaker.$procmux$3153 ($pmux).
+Removed top 1 bits (of 2) from port B of cell spi_icebreaker.$procmux$3155_CMP0 ($eq).
+Removed top 27 bits (of 32) from port Y of cell spi_icebreaker.$flatten\u_lp.\u_s.$rtl/spi_slave.v:122$sub$976 ($sub).
+Removed top 1 bits (of 6) from port A of cell spi_icebreaker.$flatten\u_lp.\u_s.$rtl/spi_slave.v:122$sub$976 ($sub).
+Removed top 26 bits (of 32) from port B of cell spi_icebreaker.$flatten\u_lp.\u_s.$rtl/spi_slave.v:122$shiftx$978 ($shiftx).
+Removed top 4 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_s.$rtl/spi_slave.v:110$eq$1022 ($eq).
+Removed top 3 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_s.$rtl/spi_slave.v:110$eq$1024 ($eq).
+Removed top 3 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_s.$rtl/spi_slave.v:110$eq$1026 ($eq).
+Removed top 2 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_s.$rtl/spi_slave.v:110$eq$1028 ($eq).
+Removed top 2 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_s.$rtl/spi_slave.v:110$eq$1030 ($eq).
+Removed top 2 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_s.$rtl/spi_slave.v:110$eq$1032 ($eq).
+Removed top 2 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_s.$rtl/spi_slave.v:110$eq$1034 ($eq).
+Removed top 1 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_s.$rtl/spi_slave.v:110$eq$1036 ($eq).
+Removed top 1 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_s.$rtl/spi_slave.v:110$eq$1038 ($eq).
+Removed top 1 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_s.$rtl/spi_slave.v:110$eq$1040 ($eq).
+Removed top 1 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_s.$rtl/spi_slave.v:110$eq$1042 ($eq).
+Removed top 1 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_s.$rtl/spi_slave.v:110$eq$1044 ($eq).
+Removed top 1 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_s.$rtl/spi_slave.v:110$eq$1046 ($eq).
+Removed top 1 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_s.$rtl/spi_slave.v:110$eq$1048 ($eq).
+Removed top 1 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_s.$rtl/spi_slave.v:110$eq$1050 ($eq).
+Removed top 2 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_m.$rtl/spi_master.v:68$sub$1100 ($sub).
+Removed top 2 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_m.$rtl/spi_master.v:69$sub$1103 ($sub).
+Removed top 3 bits (of 6) from port B of cell spi_icebreaker.$flatten\u_lp.\u_m.$rtl/spi_master.v:170$eq$1180 ($eq).
+Removed top 14 bits (of 16) from port B of cell spi_icebreaker.$flatten\u_lp.\u_m.$rtl/spi_master.v:192$eq$1188 ($eq).
+Removed top 15 bits (of 16) from port B of cell spi_icebreaker.$flatten\u_lp.\u_m.$rtl/spi_master.v:212$add$1207 ($add).
+Removed top 4 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_m.$rtl/spi_master.v:76$eq$1226 ($eq).
+Removed top 3 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_m.$rtl/spi_master.v:76$eq$1228 ($eq).
+Removed top 3 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_m.$rtl/spi_master.v:76$eq$1230 ($eq).
+Removed top 2 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_m.$rtl/spi_master.v:76$eq$1232 ($eq).
+Removed top 2 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_m.$rtl/spi_master.v:76$eq$1234 ($eq).
+Removed top 2 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_m.$rtl/spi_master.v:76$eq$1236 ($eq).
+Removed top 2 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_m.$rtl/spi_master.v:76$eq$1238 ($eq).
+Removed top 1 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_m.$rtl/spi_master.v:76$eq$1240 ($eq).
+Removed top 1 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_m.$rtl/spi_master.v:76$eq$1242 ($eq).
+Removed top 1 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_m.$rtl/spi_master.v:76$eq$1244 ($eq).
+Removed top 1 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_m.$rtl/spi_master.v:76$eq$1246 ($eq).
+Removed top 1 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_m.$rtl/spi_master.v:76$eq$1248 ($eq).
+Removed top 1 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_m.$rtl/spi_master.v:76$eq$1250 ($eq).
+Removed top 1 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_m.$rtl/spi_master.v:76$eq$1252 ($eq).
+Removed top 1 bits (of 5) from port A of cell spi_icebreaker.$flatten\u_lp.\u_m.$rtl/spi_master.v:76$eq$1254 ($eq).
+Removed top 27 bits (of 32) from wire spi_icebreaker.$flatten\u_lp.\u_s.$rtl/spi_slave.v:122$mod$977_Y.
+Removed top 27 bits (of 32) from wire spi_icebreaker.$flatten\u_lp.\u_s.$rtl/spi_slave.v:122$sub$976_Y.
+Removed top 24 bits (of 32) from wire spi_icebreaker.s_rx.
+Removed top 24 bits (of 32) from wire spi_icebreaker.m_rx.
+Removed top 24 bits (of 32) from wire spi_icebreaker.s_tx.
+Removed top 24 bits (of 32) from wire spi_icebreaker.m_tx.
+
+6.15. Executing PEEPOPT pass (run peephole optimizers).
+
+6.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+Removed 0 unused cells and 7 unused wires.
+<suppressed ~1 debug messages>
+
+6.17. Executing SHARE pass (SAT-based resource sharing).
+
+6.18. Executing TECHMAP pass (map to technology primitives).
+
+6.18.1. Executing Verilog-2005 frontend: oss-cad-suite/lib/../share/yosys/cmp2lut.v
+Parsing Verilog input from `oss-cad-suite/lib/../share/yosys/cmp2lut.v' to AST representation.
+Generating RTLIL representation for module `\_90_lut_cmp_'.
+Successfully finished Verilog frontend.
+
+6.18.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~6 debug messages>
+
+6.19. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+
+6.20. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+
+6.21. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module spi_icebreaker:
+  creating $macc model for $flatten\u_lp.\u_m.$rtl/spi_master.v:212$add$1207 ($add).
+  creating $macc model for $flatten\u_lp.\u_m.$rtl/spi_master.v:69$sub$1103 ($sub).
+  creating $macc model for $flatten\u_lp.\u_m.$rtl/spi_master.v:68$sub$1100 ($sub).
+  creating $macc model for $flatten\u_lp.\u_m.$rtl/spi_master.v:67$add$1098 ($add).
+  creating $macc model for $flatten\u_lp.\u_s.$rtl/spi_slave.v:190$sub$983 ($sub).
+  creating $macc model for $flatten\u_lp.\u_s.$rtl/spi_slave.v:122$sub$976 ($sub).
+  creating $macc model for $flatten\u_lp.\u_s.$rtl/spi_slave.v:104$sub$881 ($sub).
+  creating $macc model for $flatten\u_lp.\u_s.$rtl/spi_slave.v:104$sub$880 ($sub).
+  creating $macc model for $flatten\u_lp.\u_s.$rtl/spi_slave.v:103$add$879 ($add).
+  creating $macc model for $fpga/spi_icebreaker.v:78$add$12 ($add).
+  merging $macc model for $flatten\u_lp.\u_s.$rtl/spi_slave.v:104$sub$880 into $flatten\u_lp.\u_s.$rtl/spi_slave.v:104$sub$881.
+  creating $alu model for $macc $flatten\u_lp.\u_s.$rtl/spi_slave.v:103$add$879.
+  creating $alu model for $macc $fpga/spi_icebreaker.v:78$add$12.
+  creating $alu model for $macc $flatten\u_lp.\u_s.$rtl/spi_slave.v:122$sub$976.
+  creating $alu model for $macc $flatten\u_lp.\u_s.$rtl/spi_slave.v:190$sub$983.
+  creating $alu model for $macc $flatten\u_lp.\u_m.$rtl/spi_master.v:67$add$1098.
+  creating $alu model for $macc $flatten\u_lp.\u_m.$rtl/spi_master.v:68$sub$1100.
+  creating $alu model for $macc $flatten\u_lp.\u_m.$rtl/spi_master.v:69$sub$1103.
+  creating $alu model for $macc $flatten\u_lp.\u_m.$rtl/spi_master.v:212$add$1207.
+  creating $macc cell for $flatten\u_lp.\u_s.$rtl/spi_slave.v:104$sub$881: $auto$alumacc.cc:427:replace_macc$3889
+  creating $alu cell for $flatten\u_lp.\u_m.$rtl/spi_master.v:212$add$1207: $auto$alumacc.cc:578:replace_alu$3890
+  creating $alu cell for $flatten\u_lp.\u_m.$rtl/spi_master.v:69$sub$1103: $auto$alumacc.cc:578:replace_alu$3893
+  creating $alu cell for $flatten\u_lp.\u_m.$rtl/spi_master.v:68$sub$1100: $auto$alumacc.cc:578:replace_alu$3896
+  creating $alu cell for $flatten\u_lp.\u_m.$rtl/spi_master.v:67$add$1098: $auto$alumacc.cc:578:replace_alu$3899
+  creating $alu cell for $flatten\u_lp.\u_s.$rtl/spi_slave.v:190$sub$983: $auto$alumacc.cc:578:replace_alu$3902
+  creating $alu cell for $flatten\u_lp.\u_s.$rtl/spi_slave.v:122$sub$976: $auto$alumacc.cc:578:replace_alu$3905
+  creating $alu cell for $fpga/spi_icebreaker.v:78$add$12: $auto$alumacc.cc:578:replace_alu$3908
+  creating $alu cell for $flatten\u_lp.\u_s.$rtl/spi_slave.v:103$add$879: $auto$alumacc.cc:578:replace_alu$3911
+  created 8 $alu and 1 $macc cells.
+
+6.22. Executing OPT pass (performing simple optimizations).
+
+6.22.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+
+6.22.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 419 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Removed a total of 0 cells.
+
+6.22.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_icebreaker..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~231 debug messages>
+
+6.22.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_icebreaker.
+Performed a total of 0 changes.
+
+6.22.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 419 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Removed a total of 0 cells.
+
+6.22.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $auto$ff.cc:337:slice$3760 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\rx_sh[31:0] [8], Q = \u_lp.u_s.rx_sh [8]).
+Adding EN signal on $auto$ff.cc:337:slice$3760 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\rx_sh[31:0] [9], Q = \u_lp.u_s.rx_sh [9]).
+Adding EN signal on $auto$ff.cc:337:slice$3760 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\rx_sh[31:0] [10], Q = \u_lp.u_s.rx_sh [10]).
+Adding EN signal on $auto$ff.cc:337:slice$3760 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\rx_sh[31:0] [11], Q = \u_lp.u_s.rx_sh [11]).
+Adding EN signal on $auto$ff.cc:337:slice$3760 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\rx_sh[31:0] [12], Q = \u_lp.u_s.rx_sh [12]).
+Adding EN signal on $auto$ff.cc:337:slice$3760 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\rx_sh[31:0] [13], Q = \u_lp.u_s.rx_sh [13]).
+Adding EN signal on $auto$ff.cc:337:slice$3760 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\rx_sh[31:0] [14], Q = \u_lp.u_s.rx_sh [14]).
+Adding EN signal on $auto$ff.cc:337:slice$3760 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\rx_sh[31:0] [15], Q = \u_lp.u_s.rx_sh [15]).
+Adding EN signal on $auto$ff.cc:337:slice$3760 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\rx_sh[31:0] [16], Q = \u_lp.u_s.rx_sh [16]).
+Adding EN signal on $auto$ff.cc:337:slice$3760 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\rx_sh[31:0] [17], Q = \u_lp.u_s.rx_sh [17]).
+Adding EN signal on $auto$ff.cc:337:slice$3760 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\rx_sh[31:0] [18], Q = \u_lp.u_s.rx_sh [18]).
+Adding EN signal on $auto$ff.cc:337:slice$3760 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\rx_sh[31:0] [19], Q = \u_lp.u_s.rx_sh [19]).
+Adding EN signal on $auto$ff.cc:337:slice$3760 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\rx_sh[31:0] [20], Q = \u_lp.u_s.rx_sh [20]).
+Adding EN signal on $auto$ff.cc:337:slice$3760 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\rx_sh[31:0] [21], Q = \u_lp.u_s.rx_sh [21]).
+Adding EN signal on $auto$ff.cc:337:slice$3760 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\rx_sh[31:0] [22], Q = \u_lp.u_s.rx_sh [22]).
+Adding EN signal on $auto$ff.cc:337:slice$3760 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\rx_sh[31:0] [23], Q = \u_lp.u_s.rx_sh [23]).
+Adding EN signal on $auto$ff.cc:337:slice$3760 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\rx_sh[31:0] [24], Q = \u_lp.u_s.rx_sh [24]).
+Adding EN signal on $auto$ff.cc:337:slice$3760 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\rx_sh[31:0] [25], Q = \u_lp.u_s.rx_sh [25]).
+Adding EN signal on $auto$ff.cc:337:slice$3760 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\rx_sh[31:0] [26], Q = \u_lp.u_s.rx_sh [26]).
+Adding EN signal on $auto$ff.cc:337:slice$3760 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\rx_sh[31:0] [27], Q = \u_lp.u_s.rx_sh [27]).
+Adding EN signal on $auto$ff.cc:337:slice$3760 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\rx_sh[31:0] [28], Q = \u_lp.u_s.rx_sh [28]).
+Adding EN signal on $auto$ff.cc:337:slice$3760 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\rx_sh[31:0] [29], Q = \u_lp.u_s.rx_sh [29]).
+Adding EN signal on $auto$ff.cc:337:slice$3760 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\rx_sh[31:0] [30], Q = \u_lp.u_s.rx_sh [30]).
+Adding EN signal on $auto$ff.cc:337:slice$3760 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_s.$0\rx_sh[31:0] [31], Q = \u_lp.u_s.rx_sh [31]).
+Adding EN signal on $auto$ff.cc:337:slice$3822 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1887_Y [8], Q = \u_lp.u_m.rx_sh [8]).
+Adding EN signal on $auto$ff.cc:337:slice$3822 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1887_Y [9], Q = \u_lp.u_m.rx_sh [9]).
+Adding EN signal on $auto$ff.cc:337:slice$3822 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1887_Y [10], Q = \u_lp.u_m.rx_sh [10]).
+Adding EN signal on $auto$ff.cc:337:slice$3822 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1887_Y [11], Q = \u_lp.u_m.rx_sh [11]).
+Adding EN signal on $auto$ff.cc:337:slice$3822 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1887_Y [12], Q = \u_lp.u_m.rx_sh [12]).
+Adding EN signal on $auto$ff.cc:337:slice$3822 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1887_Y [13], Q = \u_lp.u_m.rx_sh [13]).
+Adding EN signal on $auto$ff.cc:337:slice$3822 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1887_Y [14], Q = \u_lp.u_m.rx_sh [14]).
+Adding EN signal on $auto$ff.cc:337:slice$3822 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1887_Y [15], Q = \u_lp.u_m.rx_sh [15]).
+Adding EN signal on $auto$ff.cc:337:slice$3822 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1887_Y [16], Q = \u_lp.u_m.rx_sh [16]).
+Adding EN signal on $auto$ff.cc:337:slice$3822 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1887_Y [17], Q = \u_lp.u_m.rx_sh [17]).
+Adding EN signal on $auto$ff.cc:337:slice$3822 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1887_Y [18], Q = \u_lp.u_m.rx_sh [18]).
+Adding EN signal on $auto$ff.cc:337:slice$3822 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1887_Y [19], Q = \u_lp.u_m.rx_sh [19]).
+Adding EN signal on $auto$ff.cc:337:slice$3822 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1887_Y [20], Q = \u_lp.u_m.rx_sh [20]).
+Adding EN signal on $auto$ff.cc:337:slice$3822 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1887_Y [21], Q = \u_lp.u_m.rx_sh [21]).
+Adding EN signal on $auto$ff.cc:337:slice$3822 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1887_Y [22], Q = \u_lp.u_m.rx_sh [22]).
+Adding EN signal on $auto$ff.cc:337:slice$3822 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1887_Y [23], Q = \u_lp.u_m.rx_sh [23]).
+Adding EN signal on $auto$ff.cc:337:slice$3822 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1887_Y [24], Q = \u_lp.u_m.rx_sh [24]).
+Adding EN signal on $auto$ff.cc:337:slice$3822 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1887_Y [25], Q = \u_lp.u_m.rx_sh [25]).
+Adding EN signal on $auto$ff.cc:337:slice$3822 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1887_Y [26], Q = \u_lp.u_m.rx_sh [26]).
+Adding EN signal on $auto$ff.cc:337:slice$3822 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1887_Y [27], Q = \u_lp.u_m.rx_sh [27]).
+Adding EN signal on $auto$ff.cc:337:slice$3822 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1887_Y [28], Q = \u_lp.u_m.rx_sh [28]).
+Adding EN signal on $auto$ff.cc:337:slice$3822 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1887_Y [29], Q = \u_lp.u_m.rx_sh [29]).
+Adding EN signal on $auto$ff.cc:337:slice$3822 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1887_Y [30], Q = \u_lp.u_m.rx_sh [30]).
+Adding EN signal on $auto$ff.cc:337:slice$3822 ($adffe) from module spi_icebreaker (D = $flatten\u_lp.\u_m.$procmux$1887_Y [31], Q = \u_lp.u_m.rx_sh [31]).
+Setting constant 0-bit at position 8 on $auto$ff.cc:337:slice$3835 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 9 on $auto$ff.cc:337:slice$3835 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 10 on $auto$ff.cc:337:slice$3835 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 11 on $auto$ff.cc:337:slice$3835 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 12 on $auto$ff.cc:337:slice$3835 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 13 on $auto$ff.cc:337:slice$3835 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 14 on $auto$ff.cc:337:slice$3835 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 15 on $auto$ff.cc:337:slice$3835 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 16 on $auto$ff.cc:337:slice$3835 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 17 on $auto$ff.cc:337:slice$3835 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 18 on $auto$ff.cc:337:slice$3835 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 19 on $auto$ff.cc:337:slice$3835 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 20 on $auto$ff.cc:337:slice$3835 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 21 on $auto$ff.cc:337:slice$3835 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 22 on $auto$ff.cc:337:slice$3835 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 23 on $auto$ff.cc:337:slice$3835 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 24 on $auto$ff.cc:337:slice$3835 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 25 on $auto$ff.cc:337:slice$3835 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 26 on $auto$ff.cc:337:slice$3835 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 27 on $auto$ff.cc:337:slice$3835 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 28 on $auto$ff.cc:337:slice$3835 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 29 on $auto$ff.cc:337:slice$3835 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 30 on $auto$ff.cc:337:slice$3835 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 31 on $auto$ff.cc:337:slice$3835 ($adffe) from module spi_icebreaker.
+
+6.22.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+Removed 145 unused cells and 97 unused wires.
+<suppressed ~146 debug messages>
+
+6.22.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+
+6.22.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.22.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_icebreaker..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~231 debug messages>
+
+6.22.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_icebreaker.
+Performed a total of 0 changes.
+
+6.22.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 418 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Removed a total of 0 cells.
+
+6.22.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.22.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+
+6.22.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+
+6.22.16. Finished fast OPT passes. (There is nothing left to do.)
+
+6.23. Executing MEMORY pass.
+
+6.23.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+6.23.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+6.23.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+6.23.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+6.23.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+6.23.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+
+6.23.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+6.23.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+6.23.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+
+6.23.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+6.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+
+6.25. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+6.26. Executing TECHMAP pass (map to technology primitives).
+
+6.26.1. Executing Verilog-2005 frontend: oss-cad-suite/lib/../share/yosys/ice40/brams_map.v
+Parsing Verilog input from `oss-cad-suite/lib/../share/yosys/ice40/brams_map.v' to AST representation.
+Generating RTLIL representation for module `$__ICE40_RAM4K_'.
+Successfully finished Verilog frontend.
+
+6.26.2. Executing Verilog-2005 frontend: oss-cad-suite/lib/../share/yosys/ice40/spram_map.v
+Parsing Verilog input from `oss-cad-suite/lib/../share/yosys/ice40/spram_map.v' to AST representation.
+Generating RTLIL representation for module `$__ICE40_SPRAM_'.
+Successfully finished Verilog frontend.
+
+6.26.3. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+6.27. Executing ICE40_BRAMINIT pass.
+
+6.28. Executing OPT pass (performing simple optimizations).
+
+6.28.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+<suppressed ~173 debug messages>
+
+6.28.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 315 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Removed a total of 0 cells.
+
+6.28.3. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$3794 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 8 on $auto$ff.cc:337:slice$3771 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 9 on $auto$ff.cc:337:slice$3771 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 10 on $auto$ff.cc:337:slice$3771 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 11 on $auto$ff.cc:337:slice$3771 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 12 on $auto$ff.cc:337:slice$3771 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 13 on $auto$ff.cc:337:slice$3771 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 14 on $auto$ff.cc:337:slice$3771 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 15 on $auto$ff.cc:337:slice$3771 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 16 on $auto$ff.cc:337:slice$3771 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 17 on $auto$ff.cc:337:slice$3771 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 18 on $auto$ff.cc:337:slice$3771 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 19 on $auto$ff.cc:337:slice$3771 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 20 on $auto$ff.cc:337:slice$3771 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 21 on $auto$ff.cc:337:slice$3771 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 22 on $auto$ff.cc:337:slice$3771 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 23 on $auto$ff.cc:337:slice$3771 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 24 on $auto$ff.cc:337:slice$3771 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 25 on $auto$ff.cc:337:slice$3771 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 26 on $auto$ff.cc:337:slice$3771 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 27 on $auto$ff.cc:337:slice$3771 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 28 on $auto$ff.cc:337:slice$3771 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 29 on $auto$ff.cc:337:slice$3771 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 30 on $auto$ff.cc:337:slice$3771 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 31 on $auto$ff.cc:337:slice$3771 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$3740 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 1 on $auto$ff.cc:337:slice$3740 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 2 on $auto$ff.cc:337:slice$3740 ($adffe) from module spi_icebreaker.
+Setting constant 1-bit at position 3 on $auto$ff.cc:337:slice$3740 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 4 on $auto$ff.cc:337:slice$3740 ($adffe) from module spi_icebreaker.
+Setting constant 0-bit at position 5 on $auto$ff.cc:337:slice$3740 ($adffe) from module spi_icebreaker.
+
+6.28.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+Removed 48 unused cells and 115 unused wires.
+<suppressed ~49 debug messages>
+
+6.28.5. Rerunning OPT passes. (Removed registers in this run.)
+
+6.28.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+<suppressed ~27 debug messages>
+
+6.28.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 265 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Computing hashes of 263 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+<suppressed ~10 debug messages>
+Removed a total of 2 cells.
+
+6.28.8. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.28.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+Removed 0 unused cells and 21 unused wires.
+<suppressed ~1 debug messages>
+
+6.28.10. Finished fast OPT passes.
+
+6.29. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+6.30. Executing OPT pass (performing simple optimizations).
+
+6.30.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+
+6.30.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 263 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Removed a total of 0 cells.
+
+6.30.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_icebreaker..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~99 debug messages>
+
+6.30.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_icebreaker.
+    Consolidated identical input bits for $mux cell $flatten\u_lp.\u_m.$procmux$1887:
+      Old ports: A={ \u_lp.u_m.miso \u_lp.u_m.miso \u_lp.u_m.miso \u_lp.u_m.miso \u_lp.u_m.miso \u_lp.u_m.miso \u_lp.u_m.miso \u_lp.u_m.miso \u_lp.u_m.miso \u_lp.u_m.miso \u_lp.u_m.miso \u_lp.u_m.miso \u_lp.u_m.miso \u_lp.u_m.miso \u_lp.u_m.miso \u_lp.u_m.miso \u_lp.u_m.miso \u_lp.u_m.miso \u_lp.u_m.miso \u_lp.u_m.miso \u_lp.u_m.miso \u_lp.u_m.miso \u_lp.u_m.miso \u_lp.u_m.miso \u_lp.u_m.rx_next [7:0] }, B=0, Y=$flatten\u_lp.\u_m.$procmux$1887_Y
+      New ports: A={ \u_lp.u_m.miso \u_lp.u_m.rx_next [7:0] }, B=9'000000000, Y=$flatten\u_lp.\u_m.$procmux$1887_Y [8:0]
+      New connections: $flatten\u_lp.\u_m.$procmux$1887_Y [31:9] = { $flatten\u_lp.\u_m.$procmux$1887_Y [8] $flatten\u_lp.\u_m.$procmux$1887_Y [8] $flatten\u_lp.\u_m.$procmux$1887_Y [8] $flatten\u_lp.\u_m.$procmux$1887_Y [8] $flatten\u_lp.\u_m.$procmux$1887_Y [8] $flatten\u_lp.\u_m.$procmux$1887_Y [8] $flatten\u_lp.\u_m.$procmux$1887_Y [8] $flatten\u_lp.\u_m.$procmux$1887_Y [8] $flatten\u_lp.\u_m.$procmux$1887_Y [8] $flatten\u_lp.\u_m.$procmux$1887_Y [8] $flatten\u_lp.\u_m.$procmux$1887_Y [8] $flatten\u_lp.\u_m.$procmux$1887_Y [8] $flatten\u_lp.\u_m.$procmux$1887_Y [8] $flatten\u_lp.\u_m.$procmux$1887_Y [8] $flatten\u_lp.\u_m.$procmux$1887_Y [8] $flatten\u_lp.\u_m.$procmux$1887_Y [8] $flatten\u_lp.\u_m.$procmux$1887_Y [8] $flatten\u_lp.\u_m.$procmux$1887_Y [8] $flatten\u_lp.\u_m.$procmux$1887_Y [8] $flatten\u_lp.\u_m.$procmux$1887_Y [8] $flatten\u_lp.\u_m.$procmux$1887_Y [8] $flatten\u_lp.\u_m.$procmux$1887_Y [8] $flatten\u_lp.\u_m.$procmux$1887_Y [8] }
+    New ctrl vector for $pmux cell $flatten\u_lp.\u_m.$procmux$2094: \u_lp.u_m.st [0]
+    New ctrl vector for $pmux cell $flatten\u_lp.\u_m.$procmux$2115: { $auto$opt_reduce.cc:137:opt_pmux$4209 \u_lp.u_m.st [1] }
+    New ctrl vector for $pmux cell $flatten\u_lp.\u_m.$procmux$2158: $auto$opt_reduce.cc:137:opt_pmux$3882
+    Consolidated identical input bits for $mux cell $flatten\u_lp.\u_s.$procmux$2941:
+      Old ports: A=0, B={ \u_lp.u_s.mosi_s0 \u_lp.u_s.mosi_s0 \u_lp.u_s.mosi_s0 \u_lp.u_s.mosi_s0 \u_lp.u_s.mosi_s0 \u_lp.u_s.mosi_s0 \u_lp.u_s.mosi_s0 \u_lp.u_s.mosi_s0 \u_lp.u_s.mosi_s0 \u_lp.u_s.mosi_s0 \u_lp.u_s.mosi_s0 \u_lp.u_s.mosi_s0 \u_lp.u_s.mosi_s0 \u_lp.u_s.mosi_s0 \u_lp.u_s.mosi_s0 \u_lp.u_s.mosi_s0 \u_lp.u_s.mosi_s0 \u_lp.u_s.mosi_s0 \u_lp.u_s.mosi_s0 \u_lp.u_s.mosi_s0 \u_lp.u_s.mosi_s0 \u_lp.u_s.mosi_s0 \u_lp.u_s.mosi_s0 \u_lp.u_s.mosi_s0 \u_lp.u_s.rx_next [7:0] }, Y=$flatten\u_lp.\u_s.$procmux$2941_Y
+      New ports: A=9'000000000, B={ \u_lp.u_s.mosi_s0 \u_lp.u_s.rx_next [7:0] }, Y=$flatten\u_lp.\u_s.$procmux$2941_Y [8:0]
+      New connections: $flatten\u_lp.\u_s.$procmux$2941_Y [31:9] = { $flatten\u_lp.\u_s.$procmux$2941_Y [8] $flatten\u_lp.\u_s.$procmux$2941_Y [8] $flatten\u_lp.\u_s.$procmux$2941_Y [8] $flatten\u_lp.\u_s.$procmux$2941_Y [8] $flatten\u_lp.\u_s.$procmux$2941_Y [8] $flatten\u_lp.\u_s.$procmux$2941_Y [8] $flatten\u_lp.\u_s.$procmux$2941_Y [8] $flatten\u_lp.\u_s.$procmux$2941_Y [8] $flatten\u_lp.\u_s.$procmux$2941_Y [8] $flatten\u_lp.\u_s.$procmux$2941_Y [8] $flatten\u_lp.\u_s.$procmux$2941_Y [8] $flatten\u_lp.\u_s.$procmux$2941_Y [8] $flatten\u_lp.\u_s.$procmux$2941_Y [8] $flatten\u_lp.\u_s.$procmux$2941_Y [8] $flatten\u_lp.\u_s.$procmux$2941_Y [8] $flatten\u_lp.\u_s.$procmux$2941_Y [8] $flatten\u_lp.\u_s.$procmux$2941_Y [8] $flatten\u_lp.\u_s.$procmux$2941_Y [8] $flatten\u_lp.\u_s.$procmux$2941_Y [8] $flatten\u_lp.\u_s.$procmux$2941_Y [8] $flatten\u_lp.\u_s.$procmux$2941_Y [8] $flatten\u_lp.\u_s.$procmux$2941_Y [8] $flatten\u_lp.\u_s.$procmux$2941_Y [8] }
+    Consolidated identical input bits for $pmux cell $procmux$3153:
+      Old ports: A=8'01110111, B=24'101001010011110000010010, Y=\m_tx
+      New ports: A=7'0110111, B=21'100010100111000010010, Y={ \m_tx [7:6] \m_tx [4:0] }
+      New connections: \m_tx [5] = \m_tx [2]
+    Consolidated identical input bits for $pmux cell $procmux$3148:
+      Old ports: A=8'10001000, B=24'010110101100001100110100, Y=\s_tx
+      New ports: A=6'101000, B=18'011010100011010100, Y={ \s_tx [7] \s_tx [4:0] }
+      New connections: \s_tx [6:5] = { \s_tx [1] \s_tx [2] }
+  Optimizing cells in module \spi_icebreaker.
+    Consolidated identical input bits for $mux cell $flatten\u_lp.\u_s.$procmux$2947:
+      Old ports: A=$flatten\u_lp.\u_s.$procmux$2941_Y, B=0, Y=$flatten\u_lp.\u_s.$0\rx_sh[31:0]
+      New ports: A=$flatten\u_lp.\u_s.$procmux$2941_Y [8:0], B=9'000000000, Y=$flatten\u_lp.\u_s.$0\rx_sh[31:0] [8:0]
+      New connections: $flatten\u_lp.\u_s.$0\rx_sh[31:0] [31:9] = { $flatten\u_lp.\u_s.$0\rx_sh[31:0] [8] $flatten\u_lp.\u_s.$0\rx_sh[31:0] [8] $flatten\u_lp.\u_s.$0\rx_sh[31:0] [8] $flatten\u_lp.\u_s.$0\rx_sh[31:0] [8] $flatten\u_lp.\u_s.$0\rx_sh[31:0] [8] $flatten\u_lp.\u_s.$0\rx_sh[31:0] [8] $flatten\u_lp.\u_s.$0\rx_sh[31:0] [8] $flatten\u_lp.\u_s.$0\rx_sh[31:0] [8] $flatten\u_lp.\u_s.$0\rx_sh[31:0] [8] $flatten\u_lp.\u_s.$0\rx_sh[31:0] [8] $flatten\u_lp.\u_s.$0\rx_sh[31:0] [8] $flatten\u_lp.\u_s.$0\rx_sh[31:0] [8] $flatten\u_lp.\u_s.$0\rx_sh[31:0] [8] $flatten\u_lp.\u_s.$0\rx_sh[31:0] [8] $flatten\u_lp.\u_s.$0\rx_sh[31:0] [8] $flatten\u_lp.\u_s.$0\rx_sh[31:0] [8] $flatten\u_lp.\u_s.$0\rx_sh[31:0] [8] $flatten\u_lp.\u_s.$0\rx_sh[31:0] [8] $flatten\u_lp.\u_s.$0\rx_sh[31:0] [8] $flatten\u_lp.\u_s.$0\rx_sh[31:0] [8] $flatten\u_lp.\u_s.$0\rx_sh[31:0] [8] $flatten\u_lp.\u_s.$0\rx_sh[31:0] [8] $flatten\u_lp.\u_s.$0\rx_sh[31:0] [8] }
+  Optimizing cells in module \spi_icebreaker.
+Performed a total of 8 changes.
+
+6.30.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 264 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Removed a total of 0 cells.
+
+6.30.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.30.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+6.30.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+
+6.30.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.30.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_icebreaker..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~99 debug messages>
+
+6.30.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_icebreaker.
+Performed a total of 0 changes.
+
+6.30.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 263 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Removed a total of 0 cells.
+
+6.30.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.30.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+
+6.30.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+
+6.30.16. Finished fast OPT passes. (There is nothing left to do.)
+
+6.31. Executing ICE40_WRAPCARRY pass (wrap carries).
+
+6.32. Executing TECHMAP pass (map to technology primitives).
+
+6.32.1. Executing Verilog-2005 frontend: oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+6.32.2. Executing Verilog-2005 frontend: oss-cad-suite/lib/../share/yosys/ice40/arith_map.v
+Parsing Verilog input from `oss-cad-suite/lib/../share/yosys/ice40/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_ice40_alu'.
+Successfully finished Verilog frontend.
+
+6.32.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper maccmap for cells of type $macc_v2.
+  add 5'01000 (5 bits, unsigned)
+  sub \u_lp.u_s.bit_cnt [4:0] (5 bits, unsigned)
+  add 5'11111 (5 bits, unsigned)
+Using template $paramod$2af30114e9bd4ccb04dad757b3f0a8f6bf0615b0\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $logic_or.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$32efbfac1c4dc57230cf86180788fdfd12e3b511\_80_ice40_alu for cells of type $alu.
+Using template $paramod$d1615bf4e5e328245ffd1550e5fe105901cda77b\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $not.
+Using template $paramod$175e67c02b86e96b1288b9dc100122520d7240d8\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using template $paramod$fc972a7a46956c1788f3cb5257b53c8f1df2d0cc\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $pmux.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod$constmap:c252b686eff029b485bd02c91d2acd3b0a581039$paramod$68b48f68a140f45756b6af1dd13c6945b285d34a\_90_shift_shiftx for cells of type $shiftx.
+Using template $paramod$constmap:cebf4887d2f09d58a39895302b852cbc398afd8b$paramod$e194a9e890de0a7be18db8bd15a1479dea055e42\_90_shift_shiftx for cells of type $shiftx.
+Using template $paramod$b18e16801adf491a64caa0542270798e5d4ac6b6\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000010 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000010 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000001 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000001 for cells of type $lcu.
+Using extmapper simplemap for cells of type $or.
+No more expansions possible.
+<suppressed ~1246 debug messages>
+
+6.33. Executing OPT pass (performing simple optimizations).
+
+6.33.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+<suppressed ~832 debug messages>
+
+6.33.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 965 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Computing hashes of 870 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Computing hashes of 851 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Computing hashes of 848 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+<suppressed ~351 debug messages>
+Removed a total of 117 cells.
+
+6.33.3. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $auto$ff.cc:337:slice$4392 ($_DFF_PN0_) from module spi_icebreaker (D = 1'1, Q = \st [2]).
+
+6.33.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+Removed 204 unused cells and 616 unused wires.
+<suppressed ~205 debug messages>
+
+6.33.5. Rerunning OPT passes. (Removed registers in this run.)
+
+6.33.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+
+6.33.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 644 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Removed a total of 0 cells.
+
+6.33.8. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.33.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+
+6.33.10. Finished fast OPT passes.
+
+6.34. Executing ICE40_OPT pass (performing simple optimizations).
+
+6.34.1. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) spi_icebreaker.$auto$alumacc.cc:578:replace_alu$3911.slice[0].carry: CO=\u_lp.u_s.bit_cnt [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) spi_icebreaker.$auto$alumacc.cc:578:replace_alu$3899.slice[0].carry: CO=\u_lp.u_m.bit_cnt [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) spi_icebreaker.$auto$alumacc.cc:578:replace_alu$3890.slice[0].carry: CO=\u_lp.u_m.hcnt [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) spi_icebreaker.$auto$maccmap.cc:240:synth$4217.slice[0].carry: CO=1'0
+
+6.34.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+<suppressed ~3 debug messages>
+
+6.34.3. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 644 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Removed a total of 0 cells.
+
+6.34.4. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.34.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+
+6.34.6. Rerunning OPT passes. (Removed registers in this run.)
+
+6.34.7. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) spi_icebreaker.$auto$maccmap.cc:240:synth$4217.slice[1].carry: CO=1'0
+
+6.34.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+
+6.34.9. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 644 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Removed a total of 0 cells.
+
+6.34.10. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.34.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+
+6.34.12. Rerunning OPT passes. (Removed registers in this run.)
+
+6.34.13. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) spi_icebreaker.$auto$maccmap.cc:240:synth$4217.slice[2].carry: CO=1'0
+
+6.34.14. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+
+6.34.15. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 644 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Removed a total of 0 cells.
+
+6.34.16. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.34.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+
+6.34.18. Rerunning OPT passes. (Removed registers in this run.)
+
+6.34.19. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) spi_icebreaker.$auto$maccmap.cc:240:synth$4217.slice[3].carry: CO=$auto$maccmap.cc:240:synth$4217.B [3]
+
+6.34.20. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+
+6.34.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 644 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Removed a total of 0 cells.
+
+6.34.22. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.34.23. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+6.34.24. Rerunning OPT passes. (Removed registers in this run.)
+
+6.34.25. Running ICE40 specific optimizations.
+
+6.34.26. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+
+6.34.27. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 644 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Removed a total of 0 cells.
+
+6.34.28. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.34.29. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+
+6.34.30. Finished OPT passes. (There is nothing left to do.)
+
+6.35. Executing DFFLEGALIZE pass (convert FFs and LATCHes to types supported by the target).
+
+6.36. Executing TECHMAP pass (map to technology primitives).
+
+6.36.1. Executing Verilog-2005 frontend: oss-cad-suite/lib/../share/yosys/ice40/ff_map.v
+Parsing Verilog input from `oss-cad-suite/lib/../share/yosys/ice40/ff_map.v' to AST representation.
+Generating RTLIL representation for module `$_DFF_N_'.
+Generating RTLIL representation for module `$_DFF_P_'.
+Generating RTLIL representation for module `$_DFFE_NP_'.
+Generating RTLIL representation for module `$_DFFE_PP_'.
+Generating RTLIL representation for module `$_DFF_NP0_'.
+Generating RTLIL representation for module `$_DFF_NP1_'.
+Generating RTLIL representation for module `$_DFF_PP0_'.
+Generating RTLIL representation for module `$_DFF_PP1_'.
+Generating RTLIL representation for module `$_DFFE_NP0P_'.
+Generating RTLIL representation for module `$_DFFE_NP1P_'.
+Generating RTLIL representation for module `$_DFFE_PP0P_'.
+Generating RTLIL representation for module `$_DFFE_PP1P_'.
+Generating RTLIL representation for module `$_SDFF_NP0_'.
+Generating RTLIL representation for module `$_SDFF_NP1_'.
+Generating RTLIL representation for module `$_SDFF_PP0_'.
+Generating RTLIL representation for module `$_SDFF_PP1_'.
+Generating RTLIL representation for module `$_SDFFCE_NP0P_'.
+Generating RTLIL representation for module `$_SDFFCE_NP1P_'.
+Generating RTLIL representation for module `$_SDFFCE_PP0P_'.
+Generating RTLIL representation for module `$_SDFFCE_PP1P_'.
+Successfully finished Verilog frontend.
+
+6.36.2. Continuing TECHMAP pass.
+Using template $_DFFE_PP0P_ for cells of type $_DFFE_PP0P_.
+Using template $_DFF_PP1_ for cells of type $_DFF_PP1_.
+Using template $_DFF_PP0_ for cells of type $_DFF_PP0_.
+Using template $_DFFE_PP1P_ for cells of type $_DFFE_PP1P_.
+No more expansions possible.
+<suppressed ~127 debug messages>
+
+6.37. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+
+6.38. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+Mapping spi_icebreaker.$auto$alumacc.cc:578:replace_alu$3890.slice[0].carry ($lut).
+Mapping spi_icebreaker.$auto$alumacc.cc:578:replace_alu$3899.slice[0].carry ($lut).
+Mapping spi_icebreaker.$auto$alumacc.cc:578:replace_alu$3911.slice[0].carry ($lut).
+Mapping spi_icebreaker.$auto$maccmap.cc:240:synth$4217.slice[0].carry ($lut).
+Mapping spi_icebreaker.$auto$maccmap.cc:240:synth$4217.slice[1].carry ($lut).
+Mapping spi_icebreaker.$auto$maccmap.cc:240:synth$4217.slice[2].carry ($lut).
+Mapping spi_icebreaker.$auto$maccmap.cc:240:synth$4217.slice[3].carry ($lut).
+
+6.39. Executing ICE40_OPT pass (performing simple optimizations).
+
+6.39.1. Running ICE40 specific optimizations.
+
+6.39.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+<suppressed ~191 debug messages>
+
+6.39.3. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 749 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Computing hashes of 635 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Computing hashes of 633 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Computing hashes of 632 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+<suppressed ~351 debug messages>
+Removed a total of 117 cells.
+
+6.39.4. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.39.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+Removed 0 unused cells and 750 unused wires.
+<suppressed ~1 debug messages>
+
+6.39.6. Rerunning OPT passes. (Removed registers in this run.)
+
+6.39.7. Running ICE40 specific optimizations.
+
+6.39.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+
+6.39.9. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 632 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Removed a total of 0 cells.
+
+6.39.10. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.39.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+
+6.39.12. Finished OPT passes. (There is nothing left to do.)
+
+6.40. Executing CHECK pass (checking for obvious problems).
+Checking module spi_icebreaker...
+Found and reported 0 problems.
+
+6.41. Executing TECHMAP pass (map to technology primitives).
+
+6.41.1. Executing Verilog-2005 frontend: oss-cad-suite/lib/../share/yosys/ice40/latches_map.v
+Parsing Verilog input from `oss-cad-suite/lib/../share/yosys/ice40/latches_map.v' to AST representation.
+Generating RTLIL representation for module `$_DLATCH_N_'.
+Generating RTLIL representation for module `$_DLATCH_P_'.
+Successfully finished Verilog frontend.
+
+6.41.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+6.42. Executing Verilog-2005 frontend: oss-cad-suite/lib/../share/yosys/ice40/abc9_model.v
+Parsing Verilog input from `oss-cad-suite/lib/../share/yosys/ice40/abc9_model.v' to AST representation.
+Generating RTLIL representation for module `$__ICE40_CARRY_WRAPPER'.
+Successfully finished Verilog frontend.
+
+6.43. Executing ABC9 pass.
+
+6.43.1. Executing ABC9_OPS pass (helper functions for ABC9).
+
+6.43.2. Executing ABC9_OPS pass (helper functions for ABC9).
+
+6.43.3. Executing PROC pass (convert processes to netlists).
+
+6.43.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+6.43.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$proc$664 in module SB_DFFER.
+Removed a total of 0 dead cases.
+
+6.43.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 1 assignment to connection.
+
+6.43.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\SB_DFFER.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:660$proc$667'.
+  Set init value: \Q = 1'0
+
+6.43.3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \R in `\SB_DFFER.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$proc$664'.
+
+6.43.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~1 debug messages>
+
+6.43.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\SB_DFFER.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:660$proc$667'.
+Creating decoders for process `\SB_DFFER.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$proc$664'.
+     1/1: $0\Q[0:0]
+
+6.43.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+6.43.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\SB_DFFER.\Q' using process `\SB_DFFER.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$proc$664'.
+  created $adff cell `$procdff$6989' with positive edge clock and positive level reset.
+
+6.43.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+6.43.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `SB_DFFER.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:660$proc$667'.
+Found and cleaned up 1 empty switch in `\SB_DFFER.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$proc$664'.
+Removing empty process `SB_DFFER.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$proc$664'.
+Cleaned up 1 empty switch.
+
+6.43.4. Executing PROC pass (convert processes to netlists).
+
+6.43.4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+6.43.4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:527$proc$654 in module SB_DFFS.
+Removed a total of 0 dead cases.
+
+6.43.4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 1 assignment to connection.
+
+6.43.4.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\SB_DFFS.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:525$proc$656'.
+  Set init value: \Q = 1'0
+
+6.43.4.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \S in `\SB_DFFS.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:527$proc$654'.
+
+6.43.4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+6.43.4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\SB_DFFS.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:525$proc$656'.
+Creating decoders for process `\SB_DFFS.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:527$proc$654'.
+     1/1: $0\Q[0:0]
+
+6.43.4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+6.43.4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\SB_DFFS.\Q' using process `\SB_DFFS.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:527$proc$654'.
+  created $adff cell `$procdff$6992' with positive edge clock and positive level reset.
+
+6.43.4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+6.43.4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `SB_DFFS.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:525$proc$656'.
+Removing empty process `SB_DFFS.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:527$proc$654'.
+Cleaned up 0 empty switches.
+
+6.43.5. Executing PROC pass (convert processes to netlists).
+
+6.43.5.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+6.43.5.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$proc$648 in module SB_DFFR.
+Removed a total of 0 dead cases.
+
+6.43.5.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 1 assignment to connection.
+
+6.43.5.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\SB_DFFR.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:404$proc$650'.
+  Set init value: \Q = 1'0
+
+6.43.5.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \R in `\SB_DFFR.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$proc$648'.
+
+6.43.5.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+6.43.5.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\SB_DFFR.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:404$proc$650'.
+Creating decoders for process `\SB_DFFR.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$proc$648'.
+     1/1: $0\Q[0:0]
+
+6.43.5.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+6.43.5.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\SB_DFFR.\Q' using process `\SB_DFFR.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$proc$648'.
+  created $adff cell `$procdff$6995' with positive edge clock and positive level reset.
+
+6.43.5.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+6.43.5.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `SB_DFFR.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:404$proc$650'.
+Removing empty process `SB_DFFR.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$proc$648'.
+Cleaned up 0 empty switches.
+
+6.43.6. Executing PROC pass (convert processes to netlists).
+
+6.43.6.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+6.43.6.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$proc$675 in module SB_DFFES.
+Removed a total of 0 dead cases.
+
+6.43.6.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 1 assignment to connection.
+
+6.43.6.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\SB_DFFES.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:801$proc$678'.
+  Set init value: \Q = 1'0
+
+6.43.6.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \S in `\SB_DFFES.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$proc$675'.
+
+6.43.6.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~1 debug messages>
+
+6.43.6.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\SB_DFFES.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:801$proc$678'.
+Creating decoders for process `\SB_DFFES.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$proc$675'.
+     1/1: $0\Q[0:0]
+
+6.43.6.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+6.43.6.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\SB_DFFES.\Q' using process `\SB_DFFES.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$proc$675'.
+  created $adff cell `$procdff$7000' with positive edge clock and positive level reset.
+
+6.43.6.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+6.43.6.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `SB_DFFES.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:801$proc$678'.
+Found and cleaned up 1 empty switch in `\SB_DFFES.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$proc$675'.
+Removing empty process `SB_DFFES.$oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$proc$675'.
+Cleaned up 1 empty switch.
+
+6.43.7. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module spi_icebreaker.
+Found 0 SCCs.
+
+6.43.8. Executing ABC9_OPS pass (helper functions for ABC9).
+
+6.43.9. Executing TECHMAP pass (map to technology primitives).
+
+6.43.9.1. Executing Verilog-2005 frontend: oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+6.43.9.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~134 debug messages>
+
+6.43.10. Executing OPT pass (performing simple optimizations).
+
+6.43.10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module SB_DFFES.
+Optimizing module SB_DFFR.
+Optimizing module SB_DFFS.
+Optimizing module SB_DFFER.
+
+6.43.10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\SB_DFFES'.
+Computing hashes of 2 cells of `\SB_DFFES'.
+Finding duplicate cells in `\SB_DFFES'.
+Finding identical cells in module `\SB_DFFR'.
+Computing hashes of 2 cells of `\SB_DFFR'.
+Finding duplicate cells in `\SB_DFFR'.
+Finding identical cells in module `\SB_DFFS'.
+Computing hashes of 2 cells of `\SB_DFFS'.
+Finding duplicate cells in `\SB_DFFS'.
+Finding identical cells in module `\SB_DFFER'.
+Computing hashes of 2 cells of `\SB_DFFER'.
+Finding duplicate cells in `\SB_DFFER'.
+Removed a total of 0 cells.
+
+6.43.10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \SB_DFFES..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \SB_DFFR..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \SB_DFFS..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \SB_DFFER..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+6.43.10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \SB_DFFES.
+  Optimizing cells in module \SB_DFFR.
+  Optimizing cells in module \SB_DFFS.
+  Optimizing cells in module \SB_DFFER.
+Performed a total of 0 changes.
+
+6.43.10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\SB_DFFES'.
+Computing hashes of 2 cells of `\SB_DFFES'.
+Finding duplicate cells in `\SB_DFFES'.
+Finding identical cells in module `\SB_DFFR'.
+Computing hashes of 2 cells of `\SB_DFFR'.
+Finding duplicate cells in `\SB_DFFR'.
+Finding identical cells in module `\SB_DFFS'.
+Computing hashes of 2 cells of `\SB_DFFS'.
+Finding duplicate cells in `\SB_DFFS'.
+Finding identical cells in module `\SB_DFFER'.
+Computing hashes of 2 cells of `\SB_DFFER'.
+Finding duplicate cells in `\SB_DFFER'.
+Removed a total of 0 cells.
+
+6.43.10.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.43.10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \SB_DFFES..
+Finding unused cells or wires in module \SB_DFFR..
+Finding unused cells or wires in module \SB_DFFS..
+Finding unused cells or wires in module \SB_DFFER..
+
+6.43.10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module SB_DFFES.
+Optimizing module SB_DFFR.
+Optimizing module SB_DFFS.
+Optimizing module SB_DFFER.
+
+6.43.10.9. Finished fast OPT passes. (There is nothing left to do.)
+
+6.43.11. Executing TECHMAP pass (map to technology primitives).
+
+6.43.11.1. Executing Verilog-2005 frontend: oss-cad-suite/lib/../share/yosys/abc9_map.v
+Parsing Verilog input from `oss-cad-suite/lib/../share/yosys/abc9_map.v' to AST representation.
+Lexer warning: The SystemVerilog keyword `bit' (at oss-cad-suite/lib/../share/yosys/abc9_map.v:35) is not recognized unless read_verilog is called with -sv!
+Generating RTLIL representation for module `$__ABC9_BARRIER_MAP'.
+Successfully finished Verilog frontend.
+
+6.43.11.2. Continuing TECHMAP pass.
+Using template SB_DFFER for cells of type SB_DFFER.
+Using template SB_DFFS for cells of type SB_DFFS.
+Using template SB_DFFR for cells of type SB_DFFR.
+Using template SB_DFFES for cells of type SB_DFFES.
+No more expansions possible.
+<suppressed ~112 debug messages>
+
+6.43.12. Executing Verilog-2005 frontend: oss-cad-suite/lib/../share/yosys/abc9_model.v
+Parsing Verilog input from `oss-cad-suite/lib/../share/yosys/abc9_model.v' to AST representation.
+Generating RTLIL representation for module `$__ABC9_DELAY'.
+Generating RTLIL representation for module `$__ABC9_BARRIER'.
+Generating RTLIL representation for module `$__ABC9_SCC_BREAKER'.
+Generating RTLIL representation for module `$__DFF_N__$abc9_flop'.
+Generating RTLIL representation for module `$__DFF_P__$abc9_flop'.
+Successfully finished Verilog frontend.
+
+6.43.13. Executing ABC9_OPS pass (helper functions for ABC9).
+<suppressed ~2 debug messages>
+
+6.43.14. Executing ABC9_OPS pass (helper functions for ABC9).
+
+6.43.15. Executing ABC9_OPS pass (helper functions for ABC9).
+<suppressed ~2 debug messages>
+
+6.43.16. Executing TECHMAP pass (map to technology primitives).
+
+6.43.16.1. Executing Verilog-2005 frontend: oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+6.43.16.2. Continuing TECHMAP pass.
+Using template $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1 for cells of type $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1.
+Using template $paramod\SB_LUT4\LUT_INIT=16'0110100110010110 for cells of type SB_LUT4.
+Using template SB_CARRY for cells of type SB_CARRY.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $logic_or.
+No more expansions possible.
+<suppressed ~153 debug messages>
+
+6.43.17. Executing OPT pass (performing simple optimizations).
+
+6.43.17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+<suppressed ~4 debug messages>
+
+6.43.17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 30 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Computing hashes of 20 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Computing hashes of 18 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+<suppressed ~29 debug messages>
+Removed a total of 12 cells.
+
+6.43.17.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_icebreaker..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+6.43.17.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_icebreaker.
+Performed a total of 0 changes.
+
+6.43.17.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 18 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Removed a total of 0 cells.
+
+6.43.17.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.43.17.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+Removed 0 unused cells and 24 unused wires.
+<suppressed ~1 debug messages>
+
+6.43.17.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+
+6.43.17.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.43.17.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_icebreaker..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+6.43.17.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_icebreaker.
+Performed a total of 0 changes.
+
+6.43.17.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_icebreaker'.
+Computing hashes of 18 cells of `\spi_icebreaker'.
+Finding duplicate cells in `\spi_icebreaker'.
+Removed a total of 0 cells.
+
+6.43.17.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.43.17.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_icebreaker..
+
+6.43.17.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_icebreaker.
+
+6.43.17.16. Finished fast OPT passes. (There is nothing left to do.)
+
+6.43.18. Executing AIGMAP pass (map logic to AIG).
+Module spi_icebreaker: replaced 293 cells with 1538 new cells, skipped 444 cells.
+  replaced 3 cell types:
+     102 $_MUX_
+     171 $_OR_
+      20 $_XOR_
+  not replaced 12 cell types:
+     146 $_AND_
+      59 $_NOT_
+       3 $scopeinfo
+      26 $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1
+      87 SB_DFFER_$abc9_byp
+       4 SB_DFFS_$abc9_byp
+      13 SB_DFFR_$abc9_byp
+       1 SB_DFFES_$abc9_byp
+      13 SB_DFFR
+       4 SB_DFFS
+      87 SB_DFFER
+       1 SB_DFFES
+
+6.43.18.1. Executing ABC9_OPS pass (helper functions for ABC9).
+
+6.43.18.2. Executing ABC9_OPS pass (helper functions for ABC9).
+
+6.43.18.3. Executing XAIGER2 backend.
+<suppressed ~315 debug messages>
+Extracted 824 AND gates and 0 wires from module `spi_icebreaker' to a netlist network with 264 inputs and 882 outputs.
+
+6.43.18.4. Executing ABC9_EXE pass (technology mapping using ABC9).
+
+6.43.18.5. Executing ABC9.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_lut <abc-temp-dir>/input.lut 
+ABC: + read_box <abc-temp-dir>/input.box 
+ABC: + &read <abc-temp-dir>/input.xaig 
+ABC: + &ps 
+ABC: <abc-temp-dir>/input : i/o =    107/    542  and =     546  lev =   15 (1.21)  mem = 0.02 MB  box = 131  bb = 105
+ABC: Warning: AIG with boxes has internal fanout in 0 complex flops and 4 carries.
+ABC: + &scorr 
+ABC: Warning: The network is combinational.
+ABC: + &sweep 
+ABC: + &dc2 
+ABC: + &dch -f -r 
+ABC: + &ps 
+ABC: <abc-temp-dir>/input : i/o =    107/    542  and =     554  lev =   10 (1.01)  mem = 0.02 MB  ch =   59  box = 131  bb = 105
+ABC: cst =       0  cls =     57  lit =      59  unused =     702  proof =     0
+ABC: Warning: AIG with boxes has internal fanout in 0 complex flops and 4 carries.
+ABC: + &if -W 250 -v 
+ABC: K = 4. Memory (bytes): Truth =    0. Cut =   64. Obj =  144. Set =  672. CutMin = no
+ABC: Node =     554.  Ch =    57.  Total mem =    0.26 MB. Peak cut mem =    0.03 MB.
+ABC: P:  Del = 4091.00.  Ar =     221.0.  Edge =      766.  Cut =     2811.  T =     0.00 sec
+ABC: P:  Del = 4091.00.  Ar =     221.0.  Edge =      770.  Cut =     2749.  T =     0.00 sec
+ABC: P:  Del = 4091.00.  Ar =     206.0.  Edge =      675.  Cut =     2848.  T =     0.00 sec
+ABC: F:  Del = 4091.00.  Ar =     195.0.  Edge =      642.  Cut =     2488.  T =     0.00 sec
+ABC: A:  Del = 4091.00.  Ar =     193.0.  Edge =      564.  Cut =     2380.  T =     0.00 sec
+ABC: A:  Del = 4091.00.  Ar =     192.0.  Edge =      563.  Cut =     2320.  T =     0.00 sec
+ABC: Total time =     0.00 sec
+ABC: + &write -n <abc-temp-dir>/output.aig 
+ABC: + &mfs 
+ABC: + &ps -l 
+ABC: <abc-temp-dir>/input : i/o =    107/    542  and =     408  lev =   11 (0.99)  mem = 0.02 MB  box = 131  bb = 105
+ABC: Mapping (K=4)  :  lut =    190  edge =     548  lev =    5 (0.60)  levB =   18  mem = 0.01 MB
+ABC: LUT = 190 : 2=78 41.1 %  3=56 29.5 %  4=56 29.5 %  Ave = 2.88
+ABC: Warning: AIG with boxes has internal fanout in 0 complex flops and 4 carries.
+ABC: + &write -n <abc-temp-dir>/output.aig 
+ABC: + &verify 
+ABC: Networks are equivalent.  Time =     0.03 sec
+ABC: + time 
+ABC: elapse: 0.08 seconds, total: 0.08 seconds
+
+6.43.18.6. Executing AIGER frontend.
+<suppressed ~10 debug messages>
+Removed 481 unused cells and 1209 unused wires.
+
+6.43.18.7. Executing ABC_OPS_REINTEGRATE pass (reintegrate ABC mapped design into module).
+ABC RESULTS:              $lut cells:      197
+ABC RESULTS:   $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1 cells:       26
+ABC RESULTS:   \SB_DFFER_$abc9_byp cells:       87
+ABC RESULTS:   \SB_DFFS_$abc9_byp cells:        4
+ABC RESULTS:   \SB_DFFR_$abc9_byp cells:       13
+ABC RESULTS:   \SB_DFFES_$abc9_byp cells:        1
+ABC RESULTS:           input signals:      107
+ABC RESULTS:          output signals:        6
+<suppressed ~649 debug messages>
+Removing temp directory.
+
+6.43.19. Executing TECHMAP pass (map to technology primitives).
+
+6.43.19.1. Executing Verilog-2005 frontend: oss-cad-suite/lib/../share/yosys/abc9_unmap.v
+Parsing Verilog input from `oss-cad-suite/lib/../share/yosys/abc9_unmap.v' to AST representation.
+Generating RTLIL representation for module `$__DFF_x__$abc9_flop'.
+Generating RTLIL representation for module `$__ABC9_SCC_BREAKER'.
+Generating RTLIL representation for module `$__ABC9_BARRIER'.
+Successfully finished Verilog frontend.
+
+6.43.19.2. Continuing TECHMAP pass.
+Using template SB_DFFER_$abc9_byp for cells of type SB_DFFER_$abc9_byp.
+Using template SB_DFFS_$abc9_byp for cells of type SB_DFFS_$abc9_byp.
+Using template SB_DFFR_$abc9_byp for cells of type SB_DFFR_$abc9_byp.
+Using template $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1 for cells of type $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1.
+Using template SB_DFFES_$abc9_byp for cells of type SB_DFFES_$abc9_byp.
+No more expansions possible.
+<suppressed ~142 debug messages>
+
+6.44. Executing ICE40_WRAPCARRY pass (wrap carries).
+
+6.45. Executing TECHMAP pass (map to technology primitives).
+
+6.45.1. Executing Verilog-2005 frontend: oss-cad-suite/lib/../share/yosys/ice40/ff_map.v
+Parsing Verilog input from `oss-cad-suite/lib/../share/yosys/ice40/ff_map.v' to AST representation.
+Generating RTLIL representation for module `$_DFF_N_'.
+Generating RTLIL representation for module `$_DFF_P_'.
+Generating RTLIL representation for module `$_DFFE_NP_'.
+Generating RTLIL representation for module `$_DFFE_PP_'.
+Generating RTLIL representation for module `$_DFF_NP0_'.
+Generating RTLIL representation for module `$_DFF_NP1_'.
+Generating RTLIL representation for module `$_DFF_PP0_'.
+Generating RTLIL representation for module `$_DFF_PP1_'.
+Generating RTLIL representation for module `$_DFFE_NP0P_'.
+Generating RTLIL representation for module `$_DFFE_NP1P_'.
+Generating RTLIL representation for module `$_DFFE_PP0P_'.
+Generating RTLIL representation for module `$_DFFE_PP1P_'.
+Generating RTLIL representation for module `$_SDFF_NP0_'.
+Generating RTLIL representation for module `$_SDFF_NP1_'.
+Generating RTLIL representation for module `$_SDFF_PP0_'.
+Generating RTLIL representation for module `$_SDFF_PP1_'.
+Generating RTLIL representation for module `$_SDFFCE_NP0P_'.
+Generating RTLIL representation for module `$_SDFFCE_NP1P_'.
+Generating RTLIL representation for module `$_SDFFCE_PP0P_'.
+Generating RTLIL representation for module `$_SDFFCE_PP1P_'.
+Successfully finished Verilog frontend.
+
+6.45.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~22 debug messages>
+Removed 16 unused cells and 1605 unused wires.
+
+6.46. Executing OPT_LUT pass (optimize LUTs).
+Discovering LUTs.
+Number of LUTs:      227
+  1-LUT                7
+  2-LUT               85
+  3-LUT               79
+  4-LUT               56
+  with \SB_CARRY    (#0)   22
+  with \SB_CARRY    (#1)   22
+
+Eliminating LUTs.
+Number of LUTs:      227
+  1-LUT                7
+  2-LUT               85
+  3-LUT               79
+  4-LUT               56
+  with \SB_CARRY    (#0)   22
+  with \SB_CARRY    (#1)   22
+
+Combining LUTs.
+Number of LUTs:      206
+  1-LUT                5
+  2-LUT               63
+  3-LUT               66
+  4-LUT               72
+  with \SB_CARRY    (#0)   22
+  with \SB_CARRY    (#1)   22
+
+Eliminated 0 LUTs.
+Combined 21 LUTs.
+<suppressed ~1114 debug messages>
+
+6.47. Executing TECHMAP pass (map to technology primitives).
+
+6.47.1. Executing Verilog-2005 frontend: oss-cad-suite/lib/../share/yosys/ice40/cells_map.v
+Parsing Verilog input from `oss-cad-suite/lib/../share/yosys/ice40/cells_map.v' to AST representation.
+Generating RTLIL representation for module `$lut'.
+Successfully finished Verilog frontend.
+
+6.47.2. Continuing TECHMAP pass.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01100000 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11010000 for cells of type $lut.
+Using template $paramod$9d707d218adbd63b6f9a0c79d7ee037306fb6296$lut for cells of type $lut.
+Using template $paramod$fd904e9e35cfd343a9df248824bd3f1408724879$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000001 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01010100 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0001 for cells of type $lut.
+Using template $paramod$a59507d273cd827eb6c46c37820d50a1b717efdf$lut for cells of type $lut.
+Using template $paramod$8e026b8044feab3bc3832118b9bbebad15a01938$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0100 for cells of type $lut.
+Using template $paramod$c28a8b7ce0535d090c4cfb52e9c74affd52b110c$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11001010 for cells of type $lut.
+Using template $paramod$ca36cb47e3718c2451ad019bd61af26d6da293e1$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00001000 for cells of type $lut.
+Using template $paramod$272652f6c6fbe9a75eff76e45cc7e2788835518b$lut for cells of type $lut.
+Using template $paramod$76be5a5900f80a135961ac09b0cf70ec8308af2c$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1000 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010000 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1110 for cells of type $lut.
+Using template $paramod$6e238df02989b317f10820a22773676e71120644$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01010011 for cells of type $lut.
+Using template $paramod$db08fd84fb3c4d6a41eaec6adfffe445fb7eb17f$lut for cells of type $lut.
+Using template $paramod$658b9ed803f0d3d335616d3858b53e0a2522f1e8$lut for cells of type $lut.
+Using template $paramod$571404c0889eaf57f492cb5e37f8acb5df5852f9$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11100000 for cells of type $lut.
+Using template $paramod$018d71a0fe325d6362687fe53ac13dd6340e400d$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01000000 for cells of type $lut.
+Using template $paramod$47a8214374025465e226fa66bee690ff33268a25$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00100000 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000010 for cells of type $lut.
+Using template $paramod$6d6beead1425af15cf78b27fd9b11b41b5d4bce8$lut for cells of type $lut.
+Using template $paramod$f8f63b209b7230e81958663ff24fef1613156af7$lut for cells of type $lut.
+Using template $paramod$017d8c8b5f8f0bd543e7b1e7d026dcb67424a519$lut for cells of type $lut.
+Using template $paramod$beae4210b922fc9ba2fcc4008a7474b475e38c50$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00100011 for cells of type $lut.
+Using template $paramod$193d365ba3260f56de4ca734b1cedcf9dc72302b$lut for cells of type $lut.
+Using template $paramod$39825c5ed3d135e502be79829033166f1762d78b$lut for cells of type $lut.
+Using template $paramod$97108e3cc0d0482a6e72e932e86430aa2177750b$lut for cells of type $lut.
+Using template $paramod$b297295e19b03521716155b85537bbe86d6a9ae6$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1011 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000100 for cells of type $lut.
+Using template $paramod$766f851776a2d25e13728c9147ddfe7ff70917a3$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01010001 for cells of type $lut.
+Using template $paramod$7576fe512bda17688a137fe07f2c6c8030648a53$lut for cells of type $lut.
+Using template $paramod$aba0494c4543a0277098ed4af5d7bc19e81d662a$lut for cells of type $lut.
+Using template $paramod$b431bfd938e35871dd0b7668e1503c7e8b9d491c$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0110 for cells of type $lut.
+Using template $paramod$37203517188e0e81c6d1574dd1c274ed56646adf$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11011011 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00110001 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11100111 for cells of type $lut.
+Using template $paramod$40882341c54dcd36f630f00dd7e46a35652abd36$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1101 for cells of type $lut.
+Using template $paramod$6a3d1b4c6389888034ca851571f0d03f46d1c4e9$lut for cells of type $lut.
+Using template $paramod$d5c7dda3e544463bf43ed73dadb51262f5dcf2fe$lut for cells of type $lut.
+Using template $paramod$3f9a3800e34bd795630a4eaf44b2e1d4a7f48a74$lut for cells of type $lut.
+Using template $paramod$66caeb00a39d236782a97659e3bd99621b74681b$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10101000 for cells of type $lut.
+Using template $paramod$81d8a60fd95b1a9f9ef71c12a774ae6988cb9fd5$lut for cells of type $lut.
+Using template $paramod$6b7c9c56fc2a32a479d463d5f3b0d3f4673b67f1$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00101010 for cells of type $lut.
+Using template $paramod$b68f9800cc1bf69afcfbc0567a25e43ebb01456c$lut for cells of type $lut.
+Using template $paramod$332a399730bfc61adea04021a76b1c4e4030f37d$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10000000 for cells of type $lut.
+Using template $paramod$992bdc10cff2c6edd722994f0e1044bc863f79f7$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0010 for cells of type $lut.
+Using template $paramod$905b6f4f83e2c9aec4448e070f5b650980aabbd3$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1001 for cells of type $lut.
+Using template $paramod$d7c634c964a868577f926c0690c937ab5b147f6e$lut for cells of type $lut.
+Using template $paramod$b4d0f4738a5ce50c7f36c2aa2ecc09cfb874f2b6$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000001\LUT=2'01 for cells of type $lut.
+Using template $paramod$95c37b886f78702b7142f0e86b77905875072513$lut for cells of type $lut.
+Using template $paramod$684b54388be6489c38743e4efd4f9fa13e760a4a$lut for cells of type $lut.
+Using template $paramod$2167383712a3ef5a7aa9a279cd8db29e1fc2db5f$lut for cells of type $lut.
+Using template $paramod$1e66e926164e6462a8179be1078ea3b9daa3e399$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11110010 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11101100 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01111111 for cells of type $lut.
+Using template $paramod$d0cfbfa794431f7e2ccafbbeaaefbd5ed7deeac7$lut for cells of type $lut.
+Using template $paramod$b89c522b7f70adaee1a35d80e932f38159b6a445$lut for cells of type $lut.
+No more expansions possible.
+<suppressed ~1089 debug messages>
+Removed 0 unused cells and 513 unused wires.
+
+6.48. Executing AUTONAME pass.
+Renamed 580 objects in module spi_icebreaker.
+<suppressed ~580 debug messages>
+
+6.49. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `spi_icebreaker'. Setting top module to spi_icebreaker.
+
+6.49.1. Analyzing design hierarchy..
+Top module:  \spi_icebreaker
+
+6.49.2. Analyzing design hierarchy..
+Top module:  \spi_icebreaker
+Removed 0 unused modules.
+
+6.50. Printing statistics.
+
+=== spi_icebreaker ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      256 wires
+      549 wire bits
+      256 public wires
+      549 public wire bits
+        8 ports
+        8 port bits
+        3 cells
+        3   $scopeinfo
+      333 submodules
+       22   SB_CARRY
+       87   SB_DFFER
+        1   SB_DFFES
+       13   SB_DFFR
+        4   SB_DFFS
+      206   SB_LUT4
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+        3 spi_icebreaker
+
+        +----------Count including submodules.
+        | 
+      256 wires
+      549 wire bits
+      256 public wires
+      549 public wire bits
+        8 ports
+        8 port bits
+        - memories
+        - memory bits
+        - processes
+        3 cells
+        3   $scopeinfo
+      333 submodules
+       22   SB_CARRY
+       87   SB_DFFER
+        1   SB_DFFES
+       13   SB_DFFR
+        4   SB_DFFS
+      206   SB_LUT4
+
+6.51. Executing CHECK pass (checking for obvious problems).
+Checking module spi_icebreaker...
+Found and reported 0 problems.
+
+7. Printing statistics.
+
+=== spi_icebreaker ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      256 wires
+      549 wire bits
+      256 public wires
+      549 public wire bits
+        8 ports
+        8 port bits
+      336 cells
+        3   $scopeinfo
+       22   SB_CARRY
+       87   SB_DFFER
+        1   SB_DFFES
+       13   SB_DFFR
+        4   SB_DFFS
+      206   SB_LUT4
+
+8. Executing JSON backend.
+
+End of script. Logfile hash: f231d3b4b5, time: 0.80s, user: 0.64s, system: 0.06s, MEM: 36.85 MB peak
+Yosys 0.70+368 (git sha1 7cf88aca6, Release, Clang /usr/bin/clang++ 21.1.8)
+Time spent: 18% 34x opt_clean (0 sec), 13% 1x abc9_exe (0 sec), ...

@@ -1,0 +1,9 @@
+=== INJECT_BUG_SAMPLE: exit code 0
+  [FAIL] master got 5A at max divider  (t=23598950000)
+TEST 4: clkdiv=65535, one 8-bit word ... FAIL
+RESULT: FAILED
+NEG INJECT_BUG_SAMPLE: caught (wrong sample edge) (expected)
+=== INJECT_BUG_DONE: exit code 1
+[570000] %Error: spi_sva.sv:37: Assertion failed in tb_spi_edge.sva.a_done_pulse: A2 done was longer than one clock
+%Error: sva/spi_sva.sv:37: Verilog $stop
+NEG INJECT_BUG_DONE: caught (done not a pulse) (expected)

@@ -1,0 +1,21 @@
+
+3. Printing statistics.
+
+=== spi_slave ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      265 wires
+      697 wire bits
+      265 public wires
+      697 public wire bits
+       19 ports
+       86 port bits
+      410 cells
+       15   SB_CARRY
+      113   SB_DFFER
+        1   SB_DFFES
+        8   SB_DFFR
+        3   SB_DFFS
+      270   SB_LUT4
+

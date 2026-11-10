@@ -1,0 +1,22 @@
+
+6. Printing statistics.
+
+=== spi_loopback ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      628 wires
+     1684 wire bits
+      628 public wires
+     1684 public wire bits
+       28 ports
+      172 port bits
+      963 cells
+        2   $scopeinfo
+       59   SB_CARRY
+      246   SB_DFFER
+        3   SB_DFFES
+        7   SB_DFFR
+        2   SB_DFFS
+      644   SB_LUT4
+

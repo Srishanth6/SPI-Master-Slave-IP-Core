@@ -1,0 +1,25 @@
+Yosys 0.70+368, nextpnr-ice40 0.11.1-89, run on this machine.
+
+Generic synthesis: yosys `synth -top <name> -flatten; abc -g cmos2; opt_clean; stat`
+iCE40 mapping: yosys `synth_ice40 -top <name>; stat`
+Place and route: nextpnr-ice40 --up5k --package sg48 --seed 1 --pcf fpga/icebreaker.pcf
+
+$scopeinfo rows from Yosys are not counted in the cell totals below.
+
+top              generic_cells  generic_FF  ice40_LUT4  ice40_DFF  ice40_CARRY
+spi_master                1511         136         394        136           47
+spi_slave                 1051         125         270        125           15
+spi_apb                   1628         196         426        197           42
+spi_loopback              2491         258         644        258           59
+spi_icebreaker             886         105         206        105           22
+
+spi_icebreaker on iCEBreaker (iCE40UP5K-SG48):
+  ICESTORM_LC  258 / 5280  (4 %)
+  SB_IO          8 / 39
+  Max frequency 54.27 MHz (PASS at 12.00 MHz board clock)
+  Source: results/synth/spi_icebreaker_pnr.log
+
+The raw spi_loopback top was not placed on the UP5K. It has 172 ports
+(the 32-bit host buses), which is more I/O than the part has. The
+FPGA build uses fpga/spi_icebreaker.v, which only brings out clk,
+reset, two LEDs and the four SPI pins.

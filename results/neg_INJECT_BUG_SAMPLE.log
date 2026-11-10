@@ -1,0 +1,27 @@
+-Info: tb/tb_spi_edge.sv:42: $dumpvar ignored, as Verilated without --trace
+TEST 1: abort mid-word releases CS and sets aborted
+TEST 1: abort mid-word releases CS and sets aborted ... PASS
+TEST 2: word lengths 1, 4, 8, 16, 32
+TEST 2: word lengths 1, 4, 8, 16, 32 ... PASS
+TEST 3: clkdiv=0 is treated as 1 (SCLK half-period)
+  measured SCLK high time after clkdiv=0: 1 clocks (expected 1)
+TEST 3: clkdiv=0 is treated as 1 (SCLK half-period) ... PASS
+TEST 4: clkdiv=65535, one 8-bit word
+  [FAIL] master got 5A at max divider  (t=23598950000)
+TEST 4: clkdiv=65535, one 8-bit word ... FAIL
+TEST 5: slave with CS tied high never selects or drives
+TEST 5: slave with CS tied high never selects or drives ... PASS
+TEST 6: slave with CS tied low frames words by bit count
+TEST 6: slave with CS tied low frames words by bit count ... PASS
+TEST 7: reset in the middle of a transfer
+TEST 7: reset in the middle of a transfer ... PASS
+TEST 8: overrun when a second word arrives unread
+TEST 8: overrun when a second word arrives unread ... PASS
+SVA antecedent hits: A1 idle_cs=5 A2/A3 done=3 A3 done_cs=3 A4 start=2 A5 aborted=0 A6 dis_idle=0 A7 busy=111
+--------------------------------------------------
+SUMMARY tb_spi_edge: 7/8 tests PASS, 20 checks, 1 errors
+RESULT: FAILED
+- tb/tb_spi_edge.sv:223: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.055 devel
+- Verilator: $finish at 24ms; walltime 0.586 s; speed 40.288 ms/s
+- Verilator: cpu 0.586 s on 1 threads; allocated 4 MB

@@ -1,0 +1,7 @@
+-Info: tb/tb_spi_edge.sv:42: $dumpvar ignored, as Verilated without --trace
+TEST 1: abort mid-word releases CS and sets aborted
+TEST 1: abort mid-word releases CS and sets aborted ... PASS
+TEST 2: word lengths 1, 4, 8, 16, 32
+[570000] %Error: spi_sva.sv:37: Assertion failed in tb_spi_edge.sva.a_done_pulse: A2 done was longer than one clock
+%Error: sva/spi_sva.sv:37: Verilog $stop
+Aborting...

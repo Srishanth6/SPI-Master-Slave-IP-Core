@@ -1,0 +1,15 @@
+tb_spi_rand SEED=1
+--------------------------------------------------
+Transfers: 111   checks: 222   errors: 0
+Coverage counts:
+  mode 0/1/2/3 = 28/26/25/32
+  msb/lsb = 64/47
+  width 8/16/32 = 33/32/46
+  cs_keep words = 27
+  clkdiv 2 / 3-8 / 5 / 8+ bins = 43/68/0/0
+SVA antecedent hits: A1 idle_cs=185 A2/A3 done=111 A3 done_cs=111 A4 start=104 A5 aborted=0 A6 dis_idle=0 A7 busy=18255
+RESULT: ALL TESTS PASSED
+- tb/tb_spi_rand.sv:162: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.055 devel
+- Verilator: $finish at 369us; walltime 0.024 s; speed 15.371 ms/s
+- Verilator: cpu 0.024 s on 1 threads; allocated 6 MB

@@ -1,0 +1,10 @@
+Coverage Summary:
+  line      :  89.8% (  53/  59)
+  toggle    :  87.5% (1661/1898)
+  branch    :  83.3% ( 120/ 144)
+  expr      :  92.5% ( 248/ 268)
+  fsm_state :   0.0% (   0/   0)
+  fsm_arc   :   0.0% (   0/   0)
+Annotation Summary:
+  lines with all attached points covered : 59.2%  (297/502)
+See lines with '%00' in results/cov_anno

@@ -1,0 +1,24 @@
+10. Executing LTP pass (find longest path).
+
+Longest topological path in spi_icebreaker (length=19):
+    0: \idx [0]
+    1: $abc$6611$new_n19 (via $abc$6611$blif$6611$7)
+    2: $abc$6586$auto$simplemap.cc:189:logic_reduce$4712 (via $abc$6611$blif$6611$8)
+    3: \m_tx [7] (via $abc$6621$blif$6621$0)
+    4: $abc$6620$new_n55 (via $abc$6620$blif$6620$24)
+    5: $abc$6590$auto$simplemap.cc:189:logic_reduce$4564 (via $abc$6620$blif$6620$25)
+    6: \m_tx [1] (via $abc$6621$blif$6621$22)
+    7: $abc$6621$new_n51 (via $abc$6621$blif$6621$23)
+    8: \m_tx [4] (via $abc$6621$blif$6621$24)
+    9: $abc$6619$new_n61 (via $abc$6619$blif$6619$28)
+   10: $abc$6619$new_n62 (via $abc$6619$blif$6619$29)
+   11: $abc$6587$auto$simplemap.cc:271:simplemap_eqne$3882[4] (via $abc$6619$blif$6619$30)
+   12: $abc$6613$new_n211 (via $abc$6613$blif$6613$113)
+   13: $abc$6613$new_n213 (via $abc$6613$blif$6613$115)
+   14: $abc$6613$new_n214 (via $abc$6613$blif$6613$116)
+   15: $abc$6613$new_n215 (via $abc$6613$blif$6613$117)
+   16: $abc$6613$new_n216 (via $abc$6613$blif$6613$118)
+   17: $abc$6576$auto$simplemap.cc:148:simplemap_reduce$4096 (via $abc$6613$blif$6613$119)
+   18: $abc$6601$new_n7 (via $abc$6601$blif$6601$1)
+   19: $abc$6576$auto$simple.cc:230:make_patterns_logic$3291 (via $abc$6601$blif$6601$2)
+   ff: \fail (via $auto$ff.cc:337:slice$4095)
