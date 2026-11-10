@@ -1,0 +1,85 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  simulate:
+    name: Icarus Verilog regression
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Icarus Verilog
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y iverilog
+          iverilog -V 2>&1 | head -n 1
+      - name: Directed tests
+        run: make core apb
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sim-logs
+          path: results/
+
+  verilator:
+    name: Verilator tests and lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Verilator
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y verilator make g++
+          verilator --version || true
+      - name: Lint
+        run: make lint
+      - name: Edge and random tests
+        run: make edge rand
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: verilator-logs
+          path: results/
+
+  synthesis:
+    name: Yosys and nextpnr
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Yosys and nextpnr
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y yosys nextpnr-ice40 fpga-icestorm
+          yosys -V
+          nextpnr-ice40 --version || true
+      - name: Synthesize and place
+        run: make synth
+      - name: Upload synthesis logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: synth-logs
+          path: results/synth/
+
+  formal:
+    name: SymbiYosys BMC
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install formal tools if available
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y yosys || true
+          # sby is not always in apt; skip cleanly when it is missing
+          if ! command -v sby >/dev/null; then
+            echo "sby is not installed on this runner; formal job skipped"
+            echo "skipped=1" >> "$GITHUB_ENV"
+          fi
+      - name: Run BMC and cover
+        if: env.skipped != '1'
+        run: make formal
